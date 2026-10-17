@@ -22,7 +22,13 @@ export const usePracticeStore = create<PracticeState>()((set, get) => ({
   answers: [],
   startedAt: 0,
   start: (topicId) =>
-    set({topicId, questions: getQuestions(topicId), index: 0, answers: [], startedAt: Date.now()}),
+    set({
+      topicId,
+      questions: getQuestions(topicId),
+      index: 0,
+      answers: [],
+      startedAt: Date.now(),
+    }),
   answer: (record) => set((state) => ({answers: [...state.answers, record]})),
   next: () => {
     const {index, questions, answers, topicId, startedAt} = get();

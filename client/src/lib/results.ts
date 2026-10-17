@@ -29,3 +29,16 @@ export function scoreTone(percent: number) {
   if (percent >= 65) return "text-ink";
   return "text-warn-ink";
 }
+
+export function averageScore(results: TestResult[]) {
+  if (!results.length) return 0;
+  const sum = results.reduce((total, r) => total + scoreOf(r).percent, 0);
+  return Math.round(sum / results.length);
+}
+
+/** Subtitle on the test complete / review screen. */
+export function resultMessage(result: TestResult, justFinished: boolean) {
+  if (!justFinished) return `Taken on ${formatDate(result.finishedAt)}`;
+  if (scoreOf(result).percent >= 80) return "Nice work. Keep it up!";
+  return "Your mistakes have been saved to your focus areas.";
+}

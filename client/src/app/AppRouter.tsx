@@ -1,9 +1,9 @@
 import {createBrowserRouter} from "react-router";
-import {PracticePage} from "../features/practice/pages/PracticePage";
-import {ResultDetailPage} from "../features/results/pages/ResultDetailPage";
-import {ResultsPage} from "../features/results/pages/ResultsPage";
-import {TopicsPage} from "../features/topics/pages/TopicsPage";
-import {AppLayout} from "./AppLayout";
+import PracticePage from "../features/practice/pages/PracticePage";
+import ResultDetailPage from "../features/results/pages/ResultDetailPage";
+import ResultsPage from "../features/results/pages/ResultsPage";
+import TopicsPage from "../features/topics/pages/TopicsPage";
+import AppLayout from "./AppLayout";
 
 export const router = createBrowserRouter([
   {

@@ -12,14 +12,18 @@ function sample(
   durationSec: number,
   details: AnswerRecord[] = [],
 ): TestResult {
-  const answers: AnswerRecord[] = Array.from({length: total}, (_, i) => details[i] ?? {
-    questionId: `${id}-${i}`,
-    kind: "choice",
-    prompt: "",
-    given: "",
-    expected: "",
-    correct: i >= wrong,
-  });
+  const answers: AnswerRecord[] = Array.from(
+    {length: total},
+    (_, i) =>
+      details[i] ?? {
+        questionId: `${id}-${i}`,
+        kind: "choice",
+        prompt: "",
+        given: "",
+        expected: "",
+        correct: i >= wrong,
+      },
+  );
   return {id, topicId, finishedAt, durationSec, answers};
 }
 
@@ -43,7 +47,15 @@ const foodMistakes: AnswerRecord[] = [
 ];
 
 export const sampleResults: TestResult[] = [
-  sample("r-food-1016", "food", "2026-10-16T09:12:00Z", 12, 2, 402, foodMistakes),
+  sample(
+    "r-food-1016",
+    "food",
+    "2026-10-16T09:12:00Z",
+    12,
+    2,
+    402,
+    foodMistakes,
+  ),
   sample("r-past-1015", "past", "2026-10-15T18:40:00Z", 12, 6, 490),
   sample("r-art-1014", "articles", "2026-10-14T08:05:00Z", 12, 1, 295),
   sample("r-travel-1012", "travel", "2026-10-12T19:22:00Z", 12, 5, 451),

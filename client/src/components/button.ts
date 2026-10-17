@@ -15,7 +15,11 @@ const sizes: Record<Size, string> = {
 };
 
 /** Shared button styles, for both <button> and router <Link>. */
-export function buttonClass(variant: Variant = "primary", size: Size = "md", extra = "") {
+export function buttonClass(
+  variant: Variant = "primary",
+  size: Size = "md",
+  extra = "",
+) {
   return [
     "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-colors",
     "disabled:cursor-default disabled:bg-line disabled:text-muted",

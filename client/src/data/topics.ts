@@ -1,19 +1,105 @@
-import type {FocusArea, Topic} from "../types";
+import type {ContinueLesson, FocusArea, LevelOption, Topic} from "../types";
 
 // Sample data until the server is ready.
 export const topics: Topic[] = [
-  {id: "greetings", title: "Greetings & Basics", italian: "Saluti", category: "Vocabulary", level: "A1", mastery: 92},
-  {id: "food", title: "Food & Ordering", italian: "Al ristorante", category: "Vocabulary", level: "A1", mastery: 74},
-  {id: "numbers", title: "Numbers & Time", italian: "Numeri e orari", category: "Vocabulary", level: "A1", mastery: 64},
-  {id: "articles", title: "Articles & Gender", italian: "Gli articoli", category: "Grammar", level: "A1", mastery: 81},
-  {id: "family", title: "Family & People", italian: "La famiglia", category: "Vocabulary", level: "A1", mastery: 40},
-  {id: "present", title: "Present Tense", italian: "Il presente", category: "Grammar", level: "A2", mastery: 67},
-  {id: "travel", title: "Travel & Directions", italian: "In viaggio", category: "Vocabulary", level: "A2", mastery: 54, needsReview: true},
-  {id: "shopping", title: "Shopping", italian: "Fare la spesa", category: "Vocabulary", level: "A2", mastery: 57, needsReview: true},
-  {id: "past", title: "Past Tense", italian: "Passato prossimo", category: "Grammar", level: "A2", mastery: 48},
-  {id: "work", title: "Work & Study", italian: "Lavoro e studio", category: "Vocabulary", level: "B1", mastery: 12},
-  {id: "reflexive", title: "Reflexive Verbs", italian: "Verbi riflessivi", category: "Grammar", level: "B1", mastery: 0},
-  {id: "imperfect", title: "Imperfect Tense", italian: "L'imperfetto", category: "Grammar", level: "B1", mastery: 0},
+  {
+    id: "greetings",
+    title: "Greetings & Basics",
+    italian: "Saluti",
+    category: "Vocabulary",
+    level: "A1",
+    mastery: 92,
+  },
+  {
+    id: "food",
+    title: "Food & Ordering",
+    italian: "Al ristorante",
+    category: "Vocabulary",
+    level: "A1",
+    mastery: 74,
+  },
+  {
+    id: "numbers",
+    title: "Numbers & Time",
+    italian: "Numeri e orari",
+    category: "Vocabulary",
+    level: "A1",
+    mastery: 64,
+  },
+  {
+    id: "articles",
+    title: "Articles & Gender",
+    italian: "Gli articoli",
+    category: "Grammar",
+    level: "A1",
+    mastery: 81,
+  },
+  {
+    id: "family",
+    title: "Family & People",
+    italian: "La famiglia",
+    category: "Vocabulary",
+    level: "A1",
+    mastery: 40,
+  },
+  {
+    id: "present",
+    title: "Present Tense",
+    italian: "Il presente",
+    category: "Grammar",
+    level: "A2",
+    mastery: 67,
+  },
+  {
+    id: "travel",
+    title: "Travel & Directions",
+    italian: "In viaggio",
+    category: "Vocabulary",
+    level: "A2",
+    mastery: 54,
+    needsReview: true,
+  },
+  {
+    id: "shopping",
+    title: "Shopping",
+    italian: "Fare la spesa",
+    category: "Vocabulary",
+    level: "A2",
+    mastery: 57,
+    needsReview: true,
+  },
+  {
+    id: "past",
+    title: "Past Tense",
+    italian: "Passato prossimo",
+    category: "Grammar",
+    level: "A2",
+    mastery: 48,
+  },
+  {
+    id: "work",
+    title: "Work & Study",
+    italian: "Lavoro e studio",
+    category: "Vocabulary",
+    level: "B1",
+    mastery: 12,
+  },
+  {
+    id: "reflexive",
+    title: "Reflexive Verbs",
+    italian: "Verbi riflessivi",
+    category: "Grammar",
+    level: "B1",
+    mastery: 0,
+  },
+  {
+    id: "imperfect",
+    title: "Imperfect Tense",
+    italian: "L'imperfetto",
+    category: "Grammar",
+    level: "B1",
+    mastery: 0,
+  },
 ];
 
 export const levels = ["A1", "A2", "B1"] as const;
@@ -26,7 +112,8 @@ export const focusAreas: FocusArea[] = [
   {
     id: "past-essere",
     title: "Passato prossimo with essere",
-    detail: "Choosing essere vs avere, and agreeing the participle (sono andata).",
+    detail:
+      "Choosing essere vs avere, and agreeing the participle (sono andata).",
     topicId: "past",
     accuracy: 52,
     mistakes: 9,
@@ -56,3 +143,12 @@ export const focusAreas: FocusArea[] = [
     mistakes: 4,
   },
 ];
+
+export const levelOptions: LevelOption[] = ["All", ...levels];
+
+export const continueLesson: ContinueLesson = {
+  topicId: "past",
+  title: "Past tense",
+  detail: "Passato prossimo · set 3 of 6",
+  progress: 48,
+};

@@ -11,6 +11,9 @@
   --color-ink: #15181a;
   --color-muted: #5b6168;
   --color-ink-soft: #a9b0b6;
+  --color-ink-pale: #c9ced2;
+  --color-ink-raised: #343a3f;
+  --color-ground-soft: #fafbf9;
 
   --color-brand: #0e6b4e;
   --color-brand-dark: #0a5039;
@@ -20,6 +23,7 @@
   --color-warn: #c77a12;
   --color-warn-ink: #7a4505;
   --color-warn-soft: #fcf0dc;
+  --color-warn-body: #5c3b12;
 
   --color-error: #b9382b;
   --color-error-ink: #8a2418;

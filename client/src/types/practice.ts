@@ -1,18 +1,3 @@
-export type Level = "A1" | "A2" | "B1";
-
-export type TopicCategory = "Vocabulary" | "Grammar";
-
-export interface Topic {
-  id: string;
-  title: string;
-  italian: string;
-  category: TopicCategory;
-  level: Level;
-  /** 0–100 */
-  mastery: number;
-  needsReview?: boolean;
-}
-
 export interface TranslateQuestion {
   id: string;
   kind: "translate";
@@ -43,23 +28,4 @@ export interface AnswerRecord {
   given: string;
   expected: string;
   correct: boolean;
-}
-
-export interface TestResult {
-  id: string;
-  topicId: string;
-  /** ISO date string */
-  finishedAt: string;
-  durationSec: number;
-  answers: AnswerRecord[];
-}
-
-export interface FocusArea {
-  id: string;
-  title: string;
-  detail: string;
-  topicId: string;
-  /** 0–100 */
-  accuracy: number;
-  mistakes: number;
 }

@@ -7,7 +7,17 @@ const byTopic: Record<string, Question[]> = {
       id: "food-1",
       kind: "translate",
       prompt: "Vorrei un caffè e un cornetto, per favore.",
-      words: ["I", "a coffee", "please", "would like", "the", "and", "want", "a croissant", "tea"],
+      words: [
+        "I",
+        "a coffee",
+        "please",
+        "would like",
+        "the",
+        "and",
+        "want",
+        "a croissant",
+        "tea",
+      ],
       answer: ["I", "would like", "a coffee", "and", "a croissant", "please"],
     },
     {
@@ -16,7 +26,8 @@ const byTopic: Record<string, Question[]> = {
       sentence: "Vorrei ___ acqua frizzante.",
       options: ["un", "un'", "uno", "una"],
       answer: "un'",
-      explanation: "Acqua is feminine and starts with a vowel, so una shortens to un'.",
+      explanation:
+        "Acqua is feminine and starts with a vowel, so una shortens to un'.",
     },
     {
       id: "food-3",
@@ -31,7 +42,8 @@ const byTopic: Record<string, Question[]> = {
       sentence: "Per me ___ pizza margherita.",
       options: ["una", "un", "uno", "lo"],
       answer: "una",
-      explanation: "Pizza is feminine singular and starts with a consonant: una pizza.",
+      explanation:
+        "Pizza is feminine singular and starts with a consonant: una pizza.",
     },
     {
       id: "food-5",
@@ -48,7 +60,8 @@ const byTopic: Record<string, Question[]> = {
       sentence: "___ ragazze sono italiane.",
       options: ["Le", "Gli", "La", "I"],
       answer: "Le",
-      explanation: "Feminine plural nouns always take le. Gli is for masculine plurals before a vowel, s+consonant or z.",
+      explanation:
+        "Feminine plural nouns always take le. Gli is for masculine plurals before a vowel, s+consonant or z.",
     },
     {
       id: "art-2",
@@ -56,7 +69,8 @@ const byTopic: Record<string, Question[]> = {
       sentence: "___ studenti sono in classe.",
       options: ["I", "Gli", "Le", "Lo"],
       answer: "Gli",
-      explanation: "Studenti is masculine plural and starts with s+consonant, so it takes gli.",
+      explanation:
+        "Studenti is masculine plural and starts with s+consonant, so it takes gli.",
     },
     {
       id: "art-3",

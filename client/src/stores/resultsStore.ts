@@ -13,7 +13,8 @@ export const useResultsStore = create<ResultsState>()(
   persist(
     (set) => ({
       results: sampleResults,
-      addResult: (result) => set((state) => ({results: [result, ...state.results]})),
+      addResult: (result) =>
+        set((state) => ({results: [result, ...state.results]})),
     }),
     {name: "parola-results"},
   ),
