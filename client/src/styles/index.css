@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ground: #f4f5f2;
+  --color-surface: #ffffff;
+  --color-line: #e3e5e0;
+  --color-line-strong: #d5d8d2;
+  --color-track: #eceeea;
+  --color-ink: #15181a;
+  --color-muted: #5b6168;
+  --color-ink-soft: #a9b0b6;
+
+  --color-brand: #0e6b4e;
+  --color-brand-dark: #0a5039;
+  --color-brand-soft: #e3f1ea;
+  --color-brand-glow: #6fd3a8;
+
+  --color-warn: #c77a12;
+  --color-warn-ink: #7a4505;
+  --color-warn-soft: #fcf0dc;
+
+  --color-error: #b9382b;
+  --color-error-ink: #8a2418;
+  --color-error-soft: #fbe9e6;
+  --color-error-line: #d9a39b;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @apply bg-ground font-sans text-ink antialiased;
+}
