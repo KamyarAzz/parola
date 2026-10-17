@@ -1,6 +1,6 @@
 import {Link} from "react-router";
-import {ProgressBar} from "../../components/ProgressBar";
-import type {Topic} from "../../types";
+import {ProgressBar} from "../../../components/ProgressBar";
+import type {Topic} from "../../../types";
 
 function statusOf(topic: Topic) {
   if (topic.needsReview) return {label: "Needs review", className: "text-warn-ink"};

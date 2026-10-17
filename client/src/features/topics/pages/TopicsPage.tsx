@@ -1,11 +1,11 @@
 import {ArrowRight, Search} from "lucide-react";
 import {useState} from "react";
 import {Link} from "react-router";
-import {buttonClass} from "../../components/button";
-import {ProgressBar} from "../../components/ProgressBar";
-import {levels, topics} from "../../data/topics";
-import type {Level} from "../../types";
-import {TopicCard} from "./TopicCard";
+import {buttonClass} from "../../../components/button";
+import {ProgressBar} from "../../../components/ProgressBar";
+import {levels, topics} from "../../../data/topics";
+import type {Level} from "../../../types";
+import {TopicCard} from "../components/TopicCard";
 
 type LevelFilter = Level | "All";
 

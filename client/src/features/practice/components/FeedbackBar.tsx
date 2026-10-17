@@ -1,5 +1,5 @@
 import {Check, X} from "lucide-react";
-import {buttonClass} from "../../components/button";
+import {buttonClass} from "../../../components/button";
 
 interface Props {
   correct: boolean;

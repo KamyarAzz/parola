@@ -24,7 +24,7 @@ Run `build` and `lint` before calling a change done.
   own components, the way `Navbar`, `Header` and `Footer` are split out of
   `AppLayout`.
 - Pages only put sections together. Each section (card, list, table, bar,
-  form) is its own component in the feature folder.
+  form) is its own component in the feature's `components/` folder.
 - Anything used by more than one feature goes in `src/components/`.
 - Components use a default export, named after the file:
   `export default function Navbar() {}` in `Navbar.tsx`.
@@ -59,8 +59,12 @@ Run `build` and `lint` before calling a change done.
 ## Structure (`client/src/`)
 
 - `app/` – router and app layout
-- `features/<feature>/` – pages and components for one section (`topics`,
-  `practice`, `results`)
+- `features/<feature>/` – one section of the app (`topics`, `practice`,
+  `results`):
+  - `pages/` – components a route renders (the destination in `AppRouter`),
+    named `<Name>Page.tsx`
+  - `components/` – components used only by this feature
+  - Create a folder only when it has a file in it.
 - `components/` – shared UI
 - `data/` – static data, config and sample data (until the server exists)
 - `stores/` – Zustand stores

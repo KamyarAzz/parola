@@ -1,4 +1,4 @@
-import type {ChoiceQuestion as Question} from "../../types";
+import type {ChoiceQuestion as Question} from "../../../types";
 
 interface Props {
   question: Question;

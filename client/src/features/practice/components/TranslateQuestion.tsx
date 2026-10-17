@@ -1,4 +1,4 @@
-import type {TranslateQuestion as Question} from "../../types";
+import type {TranslateQuestion as Question} from "../../../types";
 import {SpeakButton} from "./SpeakButton";
 
 const tile =

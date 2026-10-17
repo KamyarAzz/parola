@@ -1,15 +1,15 @@
 import {X} from "lucide-react";
 import {useEffect, useState} from "react";
 import {Link, Navigate, useNavigate, useParams} from "react-router";
-import {buttonClass} from "../../components/button";
-import {ProgressBar} from "../../components/ProgressBar";
-import {getTopic} from "../../data/topics";
-import {usePracticeStore} from "../../stores/practiceStore";
-import {useResultsStore} from "../../stores/resultsStore";
-import type {AnswerRecord, Question} from "../../types";
-import {ChoiceQuestion} from "./ChoiceQuestion";
-import {FeedbackBar} from "./FeedbackBar";
-import {TranslateQuestion} from "./TranslateQuestion";
+import {buttonClass} from "../../../components/button";
+import {ProgressBar} from "../../../components/ProgressBar";
+import {getTopic} from "../../../data/topics";
+import {usePracticeStore} from "../../../stores/practiceStore";
+import {useResultsStore} from "../../../stores/resultsStore";
+import type {AnswerRecord, Question} from "../../../types";
+import {ChoiceQuestion} from "../components/ChoiceQuestion";
+import {FeedbackBar} from "../components/FeedbackBar";
+import {TranslateQuestion} from "../components/TranslateQuestion";
 
 function grade(question: Question, picked: number[], selected: string | null): AnswerRecord {
   if (question.kind === "translate") {

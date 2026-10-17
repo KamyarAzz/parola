@@ -1,16 +1,16 @@
 import {ChevronRight} from "lucide-react";
 import {Link} from "react-router";
-import {buttonClass} from "../../components/button";
-import {ProgressBar} from "../../components/ProgressBar";
-import {StatTile} from "../../components/StatTile";
-import {focusAreas, getTopic, topics} from "../../data/topics";
+import {buttonClass} from "../../../components/button";
+import {ProgressBar} from "../../../components/ProgressBar";
+import {StatTile} from "../../../components/StatTile";
+import {focusAreas, getTopic, topics} from "../../../data/topics";
 import {
   formatDate,
   formatDuration,
   scoreOf,
   scoreTone,
-} from "../../lib/results";
-import {useResultsStore} from "../../stores/resultsStore";
+} from "../../../lib/results";
+import {useResultsStore} from "../../../stores/resultsStore";
 
 export function ResultsPage() {
   const results = useResultsStore((s) => s.results);

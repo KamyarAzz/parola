@@ -1,10 +1,10 @@
 import {Check} from "lucide-react";
 import {Link, useLocation, useParams} from "react-router";
-import {buttonClass} from "../../components/button";
-import {StatTile} from "../../components/StatTile";
-import {getTopic} from "../../data/topics";
-import {formatDate, formatDuration, scoreOf, scoreTone} from "../../lib/results";
-import {useResultsStore} from "../../stores/resultsStore";
+import {buttonClass} from "../../../components/button";
+import {StatTile} from "../../../components/StatTile";
+import {getTopic} from "../../../data/topics";
+import {formatDate, formatDuration, scoreOf, scoreTone} from "../../../lib/results";
+import {useResultsStore} from "../../../stores/resultsStore";
 
 /** The "test complete" screen, also used to review any past test. */
 export function ResultDetailPage() {
