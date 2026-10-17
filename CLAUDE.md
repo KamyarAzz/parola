@@ -15,8 +15,14 @@ screens)
 - `npm run dev` – dev server on http://localhost:5173
 - `npm run build` – type-check and build
 - `npm run lint` – ESLint
+- `npm run format` – format `src/` with Prettier (`format:check` to only check)
 
-Run `build` and `lint` before calling a change done.
+Before calling a change done, run `format`, `build` and `lint`, then go through
+the component checklist below.
+
+Git hooks (Husky, set up from the root `package.json`): pre-commit runs
+lint-staged in `client/` (ESLint + Prettier on staged files), pre-push builds
+the client. Don't skip them with `--no-verify`.
 
 ## Components
 
@@ -25,6 +31,31 @@ Run `build` and `lint` before calling a change done.
   `AppLayout`.
 - Pages only put sections together. Each section (card, list, table, bar,
   form) is its own component in the feature's `components/` folder.
+
+### Size and repetition (hard rules)
+
+- A page file stays under ~80 lines and any other component under ~100 lines.
+  Over that, split it before finishing.
+- Never repeat markup. When the same element appears twice with the same
+  classes (table header cells, table cells, list items, tiles, buttons), make
+  it a component and pass what differs as props.
+  Example: not six `<th className="…">Date</th>` lines, but a `TableHeadCell`
+  component used as `<TableHeadCell>Date</TableHeadCell>`.
+- Inside `.map()`, render one component per item
+  (`<ResultRow key={r.id} result={r} />`), not more than a few lines of
+  inline JSX.
+- Work out derived values (scores, labels, colour classes) in the component
+  that shows them, or in `src/lib/`, not in a parent page.
+- Generic building blocks (table cells, section cards, headings) go in
+  `src/components/` so every feature can use them.
+
+### Checklist for every new or changed component
+
+1. Is the file over the line limit? Split it.
+2. Is any markup repeated? Turn it into a component with props.
+3. Is there a block you could give a name ("past tests table", "focus area
+   item")? Make it its own component.
+4. Could another feature use it? Put it in `src/components/`.
 - Anything used by more than one feature goes in `src/components/`.
 - Components use a default export, named after the file:
   `export default function Navbar() {}` in `Navbar.tsx`.
@@ -37,10 +68,10 @@ Run `build` and `lint` before calling a change done.
 
 ## Code style
 
-- Double quotes, semicolons, no spaces inside braces:
-  `import {NavLink} from "react-router";`
-- Keep lines around 80 characters; break long objects, props and class strings
-  over several lines.
+- Prettier owns formatting (`client/.prettierrc`): double quotes, semicolons,
+  no spaces inside braces (`import {NavLink} from "react-router";`), 80
+  characters per line, Tailwind classes sorted. Run `npm run format` after
+  editing instead of formatting by hand.
 - Use `import type` for type-only imports.
 - Short comments only where the code isn't obvious.
 
@@ -49,8 +80,12 @@ Run `build` and `lint` before calling a change done.
 - Tailwind classes with the theme tokens from `src/styles/index.css`
   (`bg-brand`, `text-muted`, `border-line`, …). No hard-coded hex colours in
   components.
-- Prefer Tailwind's scale (`px-4.5`, `max-w-270`) over arbitrary values
-  (`px-[18px]`).
+- Use the canonical Tailwind class whenever one exists; the editor warns on
+  arbitrary values that have one. Spacing and sizes are 4px per step, so
+  divide pixels by 4: `w-[18px]` → `w-4.5`, `px-[18px]` → `px-4.5`,
+  `min-h-[52px]` → `min-h-13`, `max-w-[1080px]` → `max-w-270`,
+  `size-[52px]` → `size-13`. Use `[…]` only when no class fits (e.g.
+  `text-[15px]`, `rounded-[10px]`).
 - Mobile first: base classes for phones, `md:` for desktop.
 - Accessible by default: real `<button>` / `<a>` / `<label>`, `aria-label` on
   icon-only buttons, `aria-hidden` on decorative icons, touch targets at least
@@ -64,9 +99,14 @@ Run `build` and `lint` before calling a change done.
   - `pages/` – components a route renders (the destination in `AppRouter`),
     named `<Name>Page.tsx`
   - `components/` – components used only by this feature
+  - `hooks/` – state and logic for this feature's pages
+    (e.g. `usePracticeSession`), so pages stay small
   - Create a folder only when it has a file in it.
 - `components/` – shared UI
 - `data/` – static data, config and sample data (until the server exists)
 - `stores/` – Zustand stores
 - `lib/` – helper functions
-- `types.ts` – shared types
+- `types/` – one file per feature or area (`topics.ts`, `practice.ts`,
+  `results.ts`, `ui.ts`), all re-exported from `types/index.ts`. Add new types
+  to the matching file (or a new one, then export it from `index.ts`), and
+  always import from `types`, never from a single file inside it.
