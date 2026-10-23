@@ -78,29 +78,72 @@ export const grammarLessons1to4: GrammarPoint[] = [
     ],
   },
 
-  // Lezione 2
+  {
+    id: "definite-article",
+    lesson: 1,
+    category: "articles",
+    title: "The: il, lo, la, l', i, gli, le",
+    italian: "Articolo determinativo",
+    summary:
+      "Pick by gender, number and the first letter. lo / gli go before s + consonant, z, gn, ps, y; l' before a vowel.",
+    table: [
+      ["", "singular", "plural"],
+      ["masc.", "il libro", "i libri"],
+      ["masc. s + cons., z", "lo studente", "gli studenti"],
+      ["masc. vowel", "l'amico", "gli amici"],
+      ["fem.", "la casa", "le case"],
+      ["fem. vowel", "l'amica", "le amiche"],
+    ],
+    examples: [
+      {
+        it: "Il conto e le birre, per favore.",
+        en: "The bill and the beers, please.",
+      },
+      {it: "Gli studenti sono in classe.", en: "The students are in class."},
+    ],
+    exercises: [
+      gap("___ conto, per favore.", ["Il", "Lo", "La", "L'"]),
+      gap("Mi passi ___ zucchero?", ["lo", "il", "la", "l'"]),
+      gap("___ acqua è fredda.", ["L'", "La", "Lo", "Il"]),
+      gap("___ panini sono freschi.", ["I", "Gli", "Le", "Lo"]),
+      gap("___ studenti sono in classe.", ["Gli", "I", "Le", "Lo"]),
+      gap("___ amici di Marco sono italiani.", ["Gli", "I", "Le", "L'"]),
+      gap("___ ragazze sono di Roma.", ["Le", "La", "Gli", "I"]),
+      gap("Prendiamo ___ antipasti misti.", ["gli", "i", "le", "l'"]),
+    ],
+  },
   {
     id: "indefinite-article",
-    lesson: 2,
+    lesson: 1,
     category: "articles",
-    title: "A / an",
+    title: "A / an: un, uno, una, un'",
     italian: "Articolo indeterminativo",
     summary:
-      "un for most masculine words, uno before s + consonant or z, una for feminine, un' for feminine + vowel.",
+      "un for masculine, uno before s + consonant or z, una for feminine, un' for feminine + vowel. No plural: use numbers or dei / delle (lesson 8).",
     table: [
       ["", "masculine", "feminine"],
       ["most words", "un libro", "una casa"],
-      ["vowel", "un ufficio", "un'amica"],
+      ["vowel", "un amico", "un'amica"],
       ["s + cons., z", "uno studente", "una studentessa"],
     ],
-    examples: [{it: "Lavoro in un ufficio.", en: "I work in an office."}],
+    examples: [
+      {
+        it: "Ho un amico e un'amica a Roma.",
+        en: "I have a (male) friend and a (female) friend in Rome.",
+      },
+      {it: "Marco è uno studente.", en: "Marco is a student."},
+    ],
     exercises: [
       gap("Lavoro in ___ ufficio.", ["un", "uno", "una", "un'"]),
       gap("Marco è ___ studente.", ["uno", "un", "una", "un'"]),
       gap("Anna insegna in ___ scuola.", ["una", "un", "uno", "un'"]),
       gap("Questa è ___ amica di Paolo.", ["un'", "un", "uno", "una"]),
+      gap("Ho ___ zaino nuovo.", ["uno", "un", "una", "un'"]),
+      gap("Vorrei ___ aranciata.", ["un'", "una", "un", "uno"]),
     ],
   },
+
+  // Lezione 2
   {
     id: "present-regular",
     lesson: 2,
@@ -166,28 +209,6 @@ export const grammarLessons1to4: GrammarPoint[] = [
 
   // Lezione 3
   {
-    id: "definite-article",
-    lesson: 3,
-    category: "articles",
-    title: "The (singular)",
-    italian: "Articolo determinativo",
-    summary:
-      "il for most masculine words, lo before s + consonant or z, la for feminine, l' before any vowel.",
-    table: [
-      ["", "masculine", "feminine"],
-      ["most words", "il conto", "la birra"],
-      ["vowel", "l'espresso", "l'acqua"],
-      ["s + cons., z", "lo zucchero", "la spremuta"],
-    ],
-    examples: [{it: "Il conto, per favore.", en: "The bill, please."}],
-    exercises: [
-      gap("___ conto, per favore.", ["Il", "Lo", "La", "L'"]),
-      gap("Mi passi ___ zucchero?", ["lo", "il", "la", "l'"]),
-      gap("___ acqua è fredda.", ["L'", "La", "Lo", "Il"]),
-      gap("Per me ___ birra, grazie.", ["la", "il", "lo", "l'"]),
-    ],
-  },
-  {
     id: "plural-nouns",
     lesson: 3,
     category: "nouns",
@@ -223,27 +244,6 @@ export const grammarLessons1to4: GrammarPoint[] = [
         "bicchiari",
       ]),
       gap("Due ___ macchiati. (caffè)", ["caffè", "caffi", "caffèi", "caffe"]),
-    ],
-  },
-  {
-    id: "plural-articles",
-    lesson: 3,
-    category: "articles",
-    title: "The (plural)",
-    italian: "Articoli plurali",
-    summary: "il → i, lo / l' (masc.) → gli, la / l' (fem.) → le.",
-    table: [
-      ["singular", "plural"],
-      ["il panino", "i panini"],
-      ["lo spaghetto, l'antipasto", "gli spaghetti, gli antipasti"],
-      ["la pizza, l'aranciata", "le pizze, le aranciate"],
-    ],
-    examples: [{it: "Gli spaghetti sono buoni.", en: "The spaghetti is good."}],
-    exercises: [
-      gap("___ panini sono freschi.", ["I", "Gli", "Le", "Lo"]),
-      gap("___ spaghetti sono al pomodoro.", ["Gli", "I", "Le", "Lo"]),
-      gap("___ aranciate sono fredde.", ["Le", "Gli", "I", "La"]),
-      gap("Prendiamo ___ antipasti misti.", ["gli", "i", "le", "l'"]),
     ],
   },
 
