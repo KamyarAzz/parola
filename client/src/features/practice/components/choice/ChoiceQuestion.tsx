@@ -1,6 +1,5 @@
-import {optionState} from "../../../../lib/grade";
 import type {ChoiceQuestion as Question} from "../../../../types";
-import ChoiceOption from "./ChoiceOption";
+import ChoiceOptions from "./ChoiceOptions";
 import GapSentence from "./GapSentence";
 import QuestionTitle from "../question/QuestionTitle";
 
@@ -30,20 +29,14 @@ export default function ChoiceQuestion({
         }
       />
 
-      <fieldset className="grid gap-2.5 md:grid-cols-2 md:gap-3">
-        <legend className="sr-only">Options</legend>
-        {question.options.map((option, i) => (
-          <ChoiceOption
-            key={option}
-            name={question.id}
-            option={option}
-            number={i + 1}
-            state={optionState(option, question.answer, selected, checked)}
-            disabled={checked}
-            onSelect={onSelect}
-          />
-        ))}
-      </fieldset>
+      <ChoiceOptions
+        name={question.id}
+        options={question.options}
+        answer={question.answer}
+        selected={selected}
+        checked={checked}
+        onSelect={onSelect}
+      />
     </>
   );
 }

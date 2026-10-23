@@ -1,14 +1,14 @@
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router";
-import {getTopic} from "../../../data/topics";
+import {getPracticeSet} from "../../../lib/practiceSets";
 import {gradeAnswer, skippedAnswer} from "../../../lib/grade";
 import {usePracticeStore} from "../../../stores/practiceStore";
 import {useResultsStore} from "../../../stores/resultsStore";
 import type {AnswerRecord} from "../../../types";
 
-/** State and actions for one practice test on a topic. */
+/** State and actions for one practice test on a topic or word group. */
 export default function usePracticeSession(topicId: string) {
-  const topic = getTopic(topicId);
+  const practiceSet = getPracticeSet(topicId);
   const navigate = useNavigate();
   const {
     topicId: activeTopic,
@@ -25,9 +25,10 @@ export default function usePracticeSession(topicId: string) {
   const [selected, setSelected] = useState<string | null>(null);
   const [checked, setChecked] = useState<AnswerRecord | null>(null);
 
+  const found = practiceSet !== undefined;
   useEffect(() => {
-    if (topic && activeTopic !== topicId) start(topicId);
-  }, [topic, topicId, activeTopic, start]);
+    if (found && activeTopic !== topicId) start(topicId);
+  }, [found, topicId, activeTopic, start]);
 
   const question = activeTopic === topicId ? questions[index] : undefined;
 
@@ -51,7 +52,7 @@ export default function usePracticeSession(topicId: string) {
   };
 
   return {
-    topic,
+    practiceSet,
     question,
     position: index + 1,
     total: questions.length,

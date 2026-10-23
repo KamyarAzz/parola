@@ -3,3 +3,4 @@ export type * from "./practice";
 export type * from "./results";
 export type * from "./topics";
 export type * from "./ui";
+export type * from "./words";

@@ -3,6 +3,8 @@ import PracticePage from "../features/practice/pages/PracticePage";
 import ResultDetailPage from "../features/results/pages/ResultDetailPage";
 import ResultsPage from "../features/results/pages/ResultsPage";
 import TopicsPage from "../features/topics/pages/TopicsPage";
+import WordGroupPage from "../features/words/pages/WordGroupPage";
+import WordsPage from "../features/words/pages/WordsPage";
 import AppLayout from "./AppLayout";
 
 export const router = createBrowserRouter([
@@ -10,6 +12,8 @@ export const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       {path: "/", element: <TopicsPage />},
+      {path: "/words", element: <WordsPage />},
+      {path: "/words/:groupId", element: <WordGroupPage />},
       {path: "/results", element: <ResultsPage />},
     ],
   },

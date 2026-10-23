@@ -1,5 +1,5 @@
 import {create} from "zustand";
-import {getQuestions} from "../data/questions";
+import {getPracticeQuestions} from "../lib/practiceSets";
 import type {AnswerRecord, Question, TestResult} from "../types";
 
 interface PracticeState {
@@ -24,7 +24,7 @@ export const usePracticeStore = create<PracticeState>()((set, get) => ({
   start: (topicId) =>
     set({
       topicId,
-      questions: getQuestions(topicId),
+      questions: getPracticeQuestions(topicId),
       index: 0,
       answers: [],
       startedAt: Date.now(),

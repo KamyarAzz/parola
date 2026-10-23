@@ -1,7 +1,7 @@
 import type {TranslateQuestion as Question} from "../../../../types";
 import AnswerLines from "./AnswerLines";
 import QuestionTitle from "../question/QuestionTitle";
-import SpeakButton from "./SpeakButton";
+import SpeakButton from "../../../../components/SpeakButton";
 import WordTile from "./WordTile";
 
 interface TranslateQuestionProps {

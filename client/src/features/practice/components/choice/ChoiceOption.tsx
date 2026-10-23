@@ -4,6 +4,8 @@ interface ChoiceOptionProps {
   /** Radio group name */
   name: string;
   option: string;
+  /** Language of the option text */
+  lang: "it" | "en";
   /** Shown as a keyboard hint on desktop */
   number: number;
   state: OptionState;
@@ -27,6 +29,7 @@ const notes: Partial<Record<OptionState, string>> = {
 export default function ChoiceOption({
   name,
   option,
+  lang,
   number,
   state,
   disabled,
@@ -50,7 +53,7 @@ export default function ChoiceOption({
       <span className="hidden size-7 items-center justify-center rounded-lg border border-line-strong text-[13px] md:flex">
         {number}
       </span>
-      <span lang="it">{option}</span>
+      <span lang={lang}>{option}</span>
       {notes[state] && (
         <span className="ml-auto text-[13px] font-semibold">
           {notes[state]}

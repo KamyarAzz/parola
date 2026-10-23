@@ -1,4 +1,4 @@
-import {getTopic} from "../data/topics";
+import {getPracticeSet} from "./practiceSets";
 import type {LevelOption, Topic} from "../types";
 
 export function filterTopics(
@@ -39,7 +39,7 @@ export function topicSummary(topic: Topic | undefined) {
 }
 
 export function topicTitle(topicId: string) {
-  return getTopic(topicId)?.title ?? topicId;
+  return getPracticeSet(topicId)?.title ?? topicId;
 }
 
 export function topicStatus(topic: Topic) {

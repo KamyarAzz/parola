@@ -19,7 +19,18 @@ export interface ChoiceQuestion {
   explanation: string;
 }
 
-export type Question = TranslateQuestion | ChoiceQuestion;
+export interface WordQuestion {
+  id: string;
+  kind: "word";
+  /** Single word or phrase to translate */
+  prompt: string;
+  /** Language of the prompt; the options are in the other one */
+  lang: "it" | "en";
+  options: string[];
+  answer: string;
+}
+
+export type Question = TranslateQuestion | ChoiceQuestion | WordQuestion;
 
 export interface AnswerRecord {
   questionId: string;

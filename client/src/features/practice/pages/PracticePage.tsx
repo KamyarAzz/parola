@@ -8,14 +8,15 @@ import usePracticeSession from "../hooks/usePracticeSession";
 export default function PracticePage() {
   const {topicId = ""} = useParams();
   const session = usePracticeSession(topicId);
-  const {topic, question, checked} = session;
+  const {practiceSet, question, checked} = session;
 
-  if (!topic) return <Navigate to="/" replace />;
+  if (!practiceSet) return <Navigate to="/" replace />;
   if (!question) return null;
 
   return (
     <div className="flex min-h-dvh flex-col bg-surface">
       <PracticeHeader
+        exitTo={practiceSet.home}
         progress={session.progress}
         position={session.position}
         total={session.total}
@@ -24,7 +25,7 @@ export default function PracticePage() {
       <main className="flex-1 px-5 pt-3 pb-5 md:px-8 md:pt-6 md:pb-10">
         <QuestionView
           question={question}
-          topicTitle={topic.title}
+          topicTitle={practiceSet.title}
           picked={session.picked}
           selected={session.selected}
           checked={checked !== null}

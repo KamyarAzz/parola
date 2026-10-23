@@ -1,6 +1,6 @@
 import Eyebrow from "../../../../components/Eyebrow";
 import StatusIcon from "../../../../components/StatusIcon";
-import {getTopic} from "../../../../data/topics";
+import {getPracticeSet} from "../../../../lib/practiceSets";
 import {resultMessage} from "../../../../lib/results";
 import type {TestResult} from "../../../../types";
 
@@ -14,18 +14,20 @@ export default function ResultSummary({
   result,
   justFinished,
 }: ResultSummaryProps) {
-  const topic = getTopic(result.topicId);
+  const set = getPracticeSet(result.topicId);
 
   return (
     <div className="flex flex-col items-center gap-3 text-center">
       <StatusIcon correct size="lg" />
-      {topic && (
+      {set && (
         <Eyebrow>
-          {topic.title}
-          <span className="hidden md:inline">
-            {" · "}
-            <span lang="it">{topic.italian}</span>
-          </span>
+          {set.title}
+          {set.italian && (
+            <span className="hidden md:inline">
+              {" · "}
+              <span lang="it">{set.italian}</span>
+            </span>
+          )}
         </Eyebrow>
       )}
       <h1 className="text-[28px] font-bold tracking-tight md:text-[34px]">

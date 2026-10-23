@@ -3,6 +3,7 @@ import {questionLabel} from "../../../../lib/grade";
 import type {Question} from "../../../../types";
 import ChoiceQuestion from "../choice/ChoiceQuestion";
 import TranslateQuestion from "../translate/TranslateQuestion";
+import WordQuestion from "../word/WordQuestion";
 
 interface QuestionViewProps {
   question: Question;
@@ -32,7 +33,7 @@ export default function QuestionView({
       <Eyebrow className="-mb-3 md:-mb-6">
         {topicTitle} · {questionLabel(question.kind)}
       </Eyebrow>
-      {question.kind === "translate" ? (
+      {question.kind === "translate" && (
         <TranslateQuestion
           key={question.id}
           question={question}
@@ -41,8 +42,18 @@ export default function QuestionView({
           onPick={onPick}
           onRemove={onRemove}
         />
-      ) : (
+      )}
+      {question.kind === "choice" && (
         <ChoiceQuestion
+          key={question.id}
+          question={question}
+          selected={selected}
+          checked={checked}
+          onSelect={onSelect}
+        />
+      )}
+      {question.kind === "word" && (
+        <WordQuestion
           key={question.id}
           question={question}
           selected={selected}
