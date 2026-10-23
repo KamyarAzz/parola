@@ -98,7 +98,16 @@ the client. Don't skip them with `--no-verify`.
   `results`):
   - `pages/` – components a route renders (the destination in `AppRouter`),
     named `<Name>Page.tsx`
-  - `components/` – components used only by this feature
+  - `components/` – components used only by this feature, grouped into one
+    kebab-case folder per section of the page, e.g. in `results`:
+    `components/focus-areas/` (`FocusAreaList`, `FocusAreaItem`,
+    `AccuracyMeter`), `components/mistakes/`, `components/past-tests/`.
+    A section's list, item, row and helper pieces live together in its
+    folder. Every component goes in a section folder, even when the section
+    has only one file (`components/overview/ResultsOverview.tsx`); never put
+    component files directly in `components/`. When a piece is shared by
+    two sections of the same feature, keep it in the section it belongs to
+    most and import it from there (`choice/` uses `../question/QuestionTitle`).
   - `hooks/` – state and logic for this feature's pages
     (e.g. `usePracticeSession`), so pages stay small
   - Create a folder only when it has a file in it.

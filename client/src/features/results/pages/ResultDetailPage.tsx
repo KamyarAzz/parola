@@ -1,10 +1,10 @@
 import {useLocation, useParams} from "react-router";
 import {useResultsStore} from "../../../stores/resultsStore";
-import MistakeList from "../components/MistakeList";
-import ResultActions from "../components/ResultActions";
-import ResultNotFound from "../components/ResultNotFound";
-import ResultStats from "../components/ResultStats";
-import ResultSummary from "../components/ResultSummary";
+import MistakeList from "../components/mistakes/MistakeList";
+import ResultActions from "../components/summary/ResultActions";
+import ResultNotFound from "../components/not-found/ResultNotFound";
+import ResultStats from "../components/summary/ResultStats";
+import ResultSummary from "../components/summary/ResultSummary";
 
 /** The "test complete" screen, also used to review any past test. */
 export default function ResultDetailPage() {

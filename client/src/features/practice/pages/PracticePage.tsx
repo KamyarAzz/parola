@@ -1,8 +1,8 @@
 import {Navigate, useParams} from "react-router";
-import CheckBar from "../components/CheckBar";
-import FeedbackBar from "../components/FeedbackBar";
-import PracticeHeader from "../components/PracticeHeader";
-import QuestionView from "../components/QuestionView";
+import CheckBar from "../components/check-bar/CheckBar";
+import FeedbackBar from "../components/feedback/FeedbackBar";
+import PracticeHeader from "../components/header/PracticeHeader";
+import QuestionView from "../components/question/QuestionView";
 import usePracticeSession from "../hooks/usePracticeSession";
 
 export default function PracticePage() {

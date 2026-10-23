@@ -4,10 +4,10 @@ import SearchField from "../../../components/SearchField";
 import {continueLesson, topics} from "../../../data/topics";
 import {filterTopics} from "../../../lib/topics";
 import type {LevelOption} from "../../../types";
-import ContinueCard from "../components/ContinueCard";
-import LevelFilter from "../components/LevelFilter";
-import NeedsReviewCard from "../components/NeedsReviewCard";
-import TopicGrid from "../components/TopicGrid";
+import ContinueCard from "../components/continue/ContinueCard";
+import LevelFilter from "../components/level-filter/LevelFilter";
+import NeedsReviewCard from "../components/needs-review/NeedsReviewCard";
+import TopicGrid from "../components/topic-grid/TopicGrid";
 
 export default function TopicsPage() {
   const [level, setLevel] = useState<LevelOption>("All");

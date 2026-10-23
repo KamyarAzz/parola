@@ -1,9 +1,9 @@
 import PageHeader from "../../../components/PageHeader";
 import {focusAreas} from "../../../data/topics";
 import {useResultsStore} from "../../../stores/resultsStore";
-import FocusAreaList from "../components/FocusAreaList";
-import PastTests from "../components/PastTests";
-import ResultsOverview from "../components/ResultsOverview";
+import FocusAreaList from "../components/focus-areas/FocusAreaList";
+import PastTests from "../components/past-tests/PastTests";
+import ResultsOverview from "../components/overview/ResultsOverview";
 
 export default function ResultsPage() {
   const results = useResultsStore((s) => s.results);
