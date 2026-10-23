@@ -8,6 +8,7 @@ import type {
   SentenceGrouping,
   SentenceQuestion,
 } from "../types";
+import {sentenceQuestion} from "./sentenceQuestion";
 import {expandAnswers} from "./sentencePatterns";
 import {
   QUESTIONS_PER_TEST,
@@ -15,8 +16,6 @@ import {
   lessonSets,
   shuffle,
 } from "./studySets";
-
-const NUMBERS_HINT = "Write the numbers in words";
 
 export const isCue = (step: ScenarioStep): step is CueStep => "speaker" in step;
 
@@ -60,42 +59,16 @@ export function scenarioFormatTag(scenario: Scenario) {
 /** The model answer for a line. */
 export const modelAnswer = (line: LineStep) => expandAnswers(line.it)[0];
 
-/** Words without punctuation; capitals that only start a sentence are dropped. */
-function bareWords(sentence: string) {
-  const words = sentence.split(/\s+/);
-  return words.map((word, i) => {
-    const bare = word.replace(/[.,!?;:]+$/, "");
-    const startsSentence = i === 0 || /[.!?]$/.test(words[i - 1]);
-    return startsSentence ? bare.charAt(0).toLowerCase() + bare.slice(1) : bare;
-  });
-}
-
-/** The model answer's words plus a few from elsewhere in the scenario. */
-function tilesFor(line: LineStep, scenario: Scenario) {
-  const words = bareWords(modelAnswer(line));
-  const others = scenario.steps
-    .filter((step): step is LineStep => !isCue(step) && step !== line)
-    .flatMap((step) => bareWords(modelAnswer(step)))
-    .filter((w) => !words.includes(w));
-  return shuffle([...words, ...shuffle([...new Set(others)]).slice(0, 3)]);
-}
-
 /** One question per line, each with the cue that came right before it. */
 function linesOf(scenario: Scenario): SentenceQuestion[] {
+  const lines = scenario.steps.filter((step): step is LineStep => !isCue(step));
+  const models = lines.map(modelAnswer);
   return scenario.steps.flatMap((step, i) => {
     if (isCue(step)) return [];
     const before = scenario.steps[i - 1];
-    return [
-      {
-        id: `${scenario.id}-${i}`,
-        kind: "sentence",
-        prompt: step.en,
-        answers: expandAnswers(step.it),
-        cue: before && isCue(before) ? before : undefined,
-        hint: step.hint ?? (/\d/.test(step.en) ? NUMBERS_HINT : undefined),
-        tiles: tilesFor(step, scenario),
-      },
-    ];
+    const others = models.filter((_, n) => lines[n] !== step);
+    const cue = before && isCue(before) ? before : undefined;
+    return [sentenceQuestion(`${scenario.id}-${i}`, step, others, cue)];
   });
 }
 

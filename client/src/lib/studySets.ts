@@ -31,6 +31,12 @@ export function categorySets<T, C extends string>(
   }));
 }
 
+/** The lesson number in a lesson set's id, e.g. "words-lesson-3" → 3. */
+export function lessonOfSet(id: string) {
+  const match = /-lesson-(\d+)$/.exec(id);
+  return match ? Number(match[1]) : undefined;
+}
+
 /** "Lezioni 1, 2 and 5": the lessons a set's items come from. */
 export function lessonList(set: StudySet<LessonItem>) {
   const numbers = [...new Set(set.items.map((item) => item.lesson))];

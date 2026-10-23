@@ -3,11 +3,14 @@ import ChipToggle from "../../../components/ChipToggle";
 import PageHeader from "../../../components/PageHeader";
 import MixBanner from "../../../components/study/MixBanner";
 import StudySetGrid from "../../../components/study/StudySetGrid";
+import {lessons} from "../../../data/lessons";
 import {sentenceGroupings} from "../../../data/sentences";
 import {allScenariosGroup, scenarioGroups} from "../../../lib/sentences";
 import type {Scenario, SentenceGrouping} from "../../../types";
+import FreshSentences from "../components/fresh/FreshSentences";
 
 const previewOf = (scenario: Scenario) => scenario.italian;
+const lessonNumbers = lessons.map((l) => l.number);
 
 export default function SentencesPage() {
   // Kept in the URL so going back from a set keeps the same view
@@ -23,6 +26,8 @@ export default function SentencesPage() {
         description="Say real things in Italian: dialogues, short texts and drills from lessons 1–8. Type each line, or use word tiles if you're stuck."
         hideDescriptionOnMobile
       />
+
+      <FreshSentences lessons={lessonNumbers} />
 
       <MixBanner set={allScenariosGroup} noun="situations" />
 

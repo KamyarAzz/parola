@@ -1,6 +1,7 @@
 import {getQuestions} from "../data/questions";
 import {getTopic} from "../data/topics";
 import type {PracticeSet, Question, StudySet} from "../types";
+import {freshQuestions, getFreshGroup} from "./generator";
 import {getGrammarGroup, grammarQuestions} from "./grammar";
 import {
   getScenario,
@@ -8,6 +9,7 @@ import {
   groupSentenceQuestions,
   scenarioQuestions,
 } from "./sentences";
+import {lessonOfSet} from "./studySets";
 import {getVerbGroup, verbQuestions} from "./verbs";
 import {getWordGroup, wordQuestions} from "./words";
 
@@ -16,7 +18,15 @@ interface Source {
   section: string;
   find: (id: string | undefined) => StudySet<unknown> | undefined;
   questions: (set: never) => Question[];
+  /** Page to go back to, when it isn't the set's own page */
+  home?: (set: StudySet<unknown>) => string;
 }
+
+/** Fresh sentences go back to their lesson's page, or to Sentences. */
+const freshHome = (set: StudySet<unknown>) => {
+  const lesson = lessonOfSet(set.id);
+  return lesson ? `/sentences/sentences-lesson-${lesson}` : "/sentences";
+};
 
 const sources: Source[] = [
   {section: "words", find: getWordGroup, questions: wordQuestions},
@@ -26,6 +36,12 @@ const sources: Source[] = [
     section: "sentences",
     find: getScenarioGroup,
     questions: groupSentenceQuestions,
+  },
+  {
+    section: "sentences",
+    find: getFreshGroup,
+    questions: freshQuestions,
+    home: freshHome,
   },
 ];
 
@@ -47,7 +63,7 @@ export function getPracticeSet(
       id: set.id,
       title: set.title,
       italian: set.label,
-      home: `/${source.section}/${set.id}`,
+      home: source.home?.(set) ?? `/${source.section}/${set.id}`,
       homeLabel: `Back to ${source.section}`,
     };
   }
