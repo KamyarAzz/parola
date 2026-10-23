@@ -12,7 +12,7 @@ export const allWordsGroup: WordGroup = {
   id: "words-all",
   label: "Lezioni 1–8",
   title: "All words",
-  description: "A mix from every lesson you've studied",
+  description: "Every word from the lessons you've studied",
   items: words,
 };
 
@@ -20,7 +20,7 @@ const byLesson = lessonSets("words", words);
 const byTopic = categorySets("words-topic", wordTopics, words, (w) => w.topic);
 
 export function wordGroups(grouping: WordGrouping) {
-  return grouping === "lesson" ? byLesson : byTopic;
+  return [allWordsGroup, ...(grouping === "lesson" ? byLesson : byTopic)];
 }
 
 export function getWordGroup(id: string | undefined) {

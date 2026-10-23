@@ -44,7 +44,7 @@ export const allVerbsGroup: VerbGroup = {
   id: "verbs-all",
   label: "Lezioni 1–8",
   title: "All verbs",
-  description: "A mix from every lesson you've studied",
+  description: "Every verb from the lessons you've studied",
   items: verbs,
 };
 
@@ -52,7 +52,7 @@ const byLesson = lessonSets("verbs", verbs);
 const byType = categorySets("verbs-type", verbTypes, verbs, (v) => v.type);
 
 export function verbGroups(grouping: VerbGrouping) {
-  return grouping === "lesson" ? byLesson : byType;
+  return [allVerbsGroup, ...(grouping === "lesson" ? byLesson : byType)];
 }
 
 export function getVerbGroup(id: string | undefined) {
