@@ -1,10 +1,12 @@
 import {NavLink} from "react-router";
+import {appInfo} from "../data/appInfo";
 import {navItems} from "../data/navItems";
+import Credit from "./Credit";
 import Logo from "./Logo";
 
 export default function Navbar() {
   return (
-    <aside className="hidden w-60 shrink-0 flex-col gap-8 border-r border-line bg-surface px-4.5 py-7 md:flex">
+    <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col gap-8 border-r border-line bg-surface px-4.5 py-7 md:flex">
       <div className="px-2">
         <Logo />
       </div>
@@ -27,6 +29,7 @@ export default function Navbar() {
           </NavLink>
         ))}
       </nav>
+      <Credit author={appInfo.author} className="mt-auto px-3" />
     </aside>
   );
 }
