@@ -23,7 +23,7 @@ export const scenariosLessons5to8: Scenario[] = [
       cue("Receptionist", "Per quando?", "For when?"),
       say(
         "From 10 to 13 May, for three nights.",
-        "Dal [10|dieci] al [13|tredici] maggio, per tre notti.",
+        "Dal dieci al tredici maggio, per tre notti.",
       ),
       say(
         "Is breakfast included?",
@@ -55,20 +55,17 @@ export const scenariosLessons5to8: Scenario[] = [
         "Buongiorno, [mi chiamo|sono] Laura Bianchi.",
       ),
       say("My address is Via Roma 25, Florence.", [
-        "Il mio indirizzo è via Roma [25|venticinque], (a) Firenze.",
-        "Abito in via Roma [25|venticinque], a Firenze.",
+        "Il mio indirizzo è via Roma venticinque, (a) Firenze.",
+        "Abito in via Roma venticinque, a Firenze.",
       ]),
-      say(
-        "My mobile number is 333 4567890.",
-        "Il mio (numero di) cellulare è 333 4567890.",
-      ),
+      say("We are two adults and a child.", "Siamo due adulti e un bambino."),
       say(
         "I'd like to book a single room with a bathroom.",
         "Vorrei prenotare una camera singola con bagno.",
       ),
       say(
         "I arrive on 3 June and I leave on 5 June.",
-        "Arrivo il [3|tre] giugno e parto il [5|cinque] (giugno).",
+        "Arrivo il tre giugno e parto il cinque (giugno).",
       ),
       say("Can I bring my dog?", "Posso portare il (mio) cane?"),
       say("Thank you and best regards.", "Grazie e cordiali saluti."),

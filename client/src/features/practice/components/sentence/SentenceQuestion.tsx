@@ -31,6 +31,7 @@ export default function SentenceQuestion({
           picked={session.picked}
           onPick={session.pick}
           onRemove={session.remove}
+          onArrange={session.arrange}
           locked={locked}
         />
       ) : (

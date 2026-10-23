@@ -9,6 +9,7 @@ interface TranslateQuestionProps {
   picked: number[];
   onPick: (wordIndex: number) => void;
   onRemove: (position: number) => void;
+  onArrange: (picked: number[]) => void;
   locked: boolean;
 }
 
@@ -17,6 +18,7 @@ export default function TranslateQuestion({
   picked,
   onPick,
   onRemove,
+  onArrange,
   locked,
 }: TranslateQuestionProps) {
   return (
@@ -38,6 +40,7 @@ export default function TranslateQuestion({
         picked={picked}
         onPick={onPick}
         onRemove={onRemove}
+        onArrange={onArrange}
         locked={locked}
       />
     </>

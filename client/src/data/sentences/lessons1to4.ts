@@ -80,12 +80,12 @@ export const scenariosLessons1to4: Scenario[] = [
     steps: [
       say(
         "My name is Paul and I'm 30 years old.",
-        "[Mi chiamo|Sono] Paul e ho [30|trenta] anni.",
+        "[Mi chiamo|Sono] Paul e ho [trent'anni|trenta anni].",
       ),
       say("I'm English, from Manchester.", "(Io) sono inglese, di Manchester."),
       say(
         "I live in Bologna, in Via Mazzini 14.",
-        "(Io) abito a Bologna, in via Mazzini [14|quattordici].",
+        "(Io) abito a Bologna, in via Mazzini quattordici.",
       ),
       say(
         "I'm an architect and I work in an office.",
@@ -130,7 +130,7 @@ export const scenariosLessons1to4: Scenario[] = [
         "Sono insegnante di inglese. Quanti anni hai?",
         "I'm an English teacher. How old are you?",
       ),
-      say("I'm 35. And you?", "Ho [35|trentacinque] anni. E tu?"),
+      say("I'm 35. And you?", "Ho trentacinque anni. E tu?"),
       cue("Giulia", "Io ho 28 anni.", "I'm 28."),
       say(
         "This is Luca. He's a student.",
@@ -237,7 +237,7 @@ export const scenariosLessons1to4: Scenario[] = [
       say("On Saturdays I go to the cinema.", "[Il|Di] sabato vado al cinema."),
       say(
         "On Sundays I sleep until ten.",
-        "[La|Di] domenica dormo fino alle [dieci|10].",
+        "[La|Di] domenica dormo fino alle dieci.",
       ),
       say("I never watch TV.", "Non guardo mai la [TV|televisione]."),
       say(

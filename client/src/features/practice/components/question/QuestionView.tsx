@@ -34,6 +34,7 @@ export default function QuestionView({
           locked={checked}
           onPick={session.pick}
           onRemove={session.remove}
+          onArrange={session.arrange}
         />
       )}
       {question.kind === "choice" && (

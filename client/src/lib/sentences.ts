@@ -16,6 +16,8 @@ import {
   shuffle,
 } from "./studySets";
 
+const NUMBERS_HINT = "Write the numbers in words";
+
 export const isCue = (step: ScenarioStep): step is CueStep => "speaker" in step;
 
 export const allScenariosGroup: ScenarioGroup = {
@@ -90,7 +92,7 @@ function linesOf(scenario: Scenario): SentenceQuestion[] {
         prompt: step.en,
         answers: expandAnswers(step.it),
         cue: before && isCue(before) ? before : undefined,
-        hint: step.hint,
+        hint: step.hint ?? (/\d/.test(step.en) ? NUMBERS_HINT : undefined),
         tiles: tilesFor(step, scenario),
       },
     ];

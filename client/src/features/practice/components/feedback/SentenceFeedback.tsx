@@ -17,6 +17,7 @@ export default function SentenceFeedback({record}: SentenceFeedbackProps) {
       </span>
       {record.given && <DiffLine label="You" words={diff.given} tone="given" />}
       <DiffLine label="Answer" words={diff.expected} tone="expected" />
+      {record.note && <p className="text-sm font-medium">{record.note}</p>}
     </div>
   );
 }

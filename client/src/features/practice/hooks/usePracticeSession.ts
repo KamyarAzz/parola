@@ -95,6 +95,7 @@ export default function usePracticeSession(practiceId: string) {
     pick: (wordIndex: number) => setPicked((p) => [...p, wordIndex]),
     remove: (position: number) =>
       setPicked((p) => p.filter((_, i) => i !== position)),
+    arrange: setPicked,
     select: setSelected,
     type: setTyped,
     toggleTiles: () => {

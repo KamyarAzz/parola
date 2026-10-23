@@ -11,11 +11,13 @@ export function normalize(text: string) {
 }
 
 export function stripAccents(text: string) {
-  return text.normalize("NFD").replace(/[̀-ͯ]/g, "");
+  return text.normalize("NFD").replace(/\p{M}/gu, "");
 }
 
 const tokens = (text: string) => normalize(text).split(" ").filter(Boolean);
 const plain = (text: string) => stripAccents(normalize(text));
+// "trenta cinque" and "trentacinque" compare equal
+const compact = (text: string) => plain(text).replace(/ /g, "");
 
 function levenshtein(a: string, b: string) {
   let prev = Array.from({length: b.length + 1}, (_, i) => i);
@@ -99,6 +101,15 @@ export function checkSentence(given: string, answers: string[]): SentenceCheck {
     }
   }
   for (const answer of answers) {
+    if (compact(given) === compact(answer)) {
+      return {
+        correct: true,
+        expected: answer,
+        note: `Watch the spacing: “${answer}”`,
+      };
+    }
+  }
+  for (const answer of answers) {
     const note = typoNote(given, answer);
     if (note) return {correct: true, expected: answer, note};
   }
@@ -109,5 +120,9 @@ export function checkSentence(given: string, answers: string[]): SentenceCheck {
       ? answer
       : best,
   );
-  return {correct: false, expected: closest};
+  return {
+    correct: false,
+    expected: closest,
+    note: /\d/.test(given) ? "Write numbers in words, not digits." : undefined,
+  };
 }

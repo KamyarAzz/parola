@@ -10,7 +10,8 @@ const key = (word: string) => stripAccents(normalize(word));
 
 /**
  * Marks which words of the learner's sentence and of the answer match,
- * keeping the original spelling and punctuation for display.
+ * keeping the original spelling and punctuation for display. Accents are
+ * ignored, so "e" for "è" is not marked wrong.
  */
 export function wordDiff(given: string, expected: string) {
   const a = given.split(/\s+/).filter(Boolean);
@@ -23,10 +24,8 @@ export function wordDiff(given: string, expected: string) {
   let j = 0;
   while (i < a.length && j < b.length) {
     if (key(a[i]) === key(b[j])) {
-      // Lined up ignoring accents, but a wrong accent still counts as wrong
-      const same = normalize(a[i]) === normalize(b[j]);
-      givenOk[i++] = same;
-      expectedOk[j++] = same;
+      givenOk[i++] = true;
+      expectedOk[j++] = true;
     } else if (table[i + 1][j] >= table[i][j + 1]) {
       i++;
     } else {
