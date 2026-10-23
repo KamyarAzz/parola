@@ -7,7 +7,7 @@ interface ResultActionsProps {
 }
 
 export default function ResultActions({topicId}: ResultActionsProps) {
-  const isWords = topicId.startsWith("words-");
+  const set = getPracticeSet(topicId);
 
   return (
     <div className="flex flex-col gap-2.5 md:flex-row-reverse md:justify-center md:gap-3">
@@ -21,14 +21,14 @@ export default function ResultActions({topicId}: ResultActionsProps) {
         Practise again
       </Link>
       <Link
-        to={getPracticeSet(topicId)?.home ?? "/"}
+        to={set?.home ?? "/"}
         className={buttonClass(
           "secondary",
           "lg",
           "max-md:border-0 max-md:bg-transparent max-md:text-muted",
         )}
       >
-        {isWords ? "Back to words" : "Back to topics"}
+        {set?.homeLabel ?? "Back to topics"}
       </Link>
     </div>
   );

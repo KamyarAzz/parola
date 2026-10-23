@@ -1,13 +1,16 @@
 import {useSearchParams} from "react-router";
+import ChipToggle from "../../../components/ChipToggle";
 import PageHeader from "../../../components/PageHeader";
+import MixBanner from "../../../components/study/MixBanner";
+import StudySetGrid from "../../../components/study/StudySetGrid";
+import {wordGroupings} from "../../../data/words";
 import {allWordsGroup, wordGroups} from "../../../lib/words";
-import type {WordGrouping} from "../../../types";
-import AllWordsCard from "../components/all-words/AllWordsCard";
-import GroupingToggle from "../components/grouping/GroupingToggle";
-import WordGroupGrid from "../components/group-grid/WordGroupGrid";
+import type {Word, WordGrouping} from "../../../types";
+
+const previewOf = (word: Word) => word.it;
 
 export default function WordsPage() {
-  // Kept in the URL so going back from a group keeps the same view
+  // Kept in the URL so going back from a set keeps the same view
   const [params, setParams] = useSearchParams();
   const grouping: WordGrouping =
     params.get("by") === "topic" ? "topic" : "lesson";
@@ -21,19 +24,26 @@ export default function WordsPage() {
         hideDescriptionOnMobile
       />
 
-      <AllWordsCard group={allWordsGroup} />
+      <MixBanner set={allWordsGroup} noun="words" />
 
-      <section aria-labelledby="groups-heading" className="flex flex-col gap-4">
+      <section aria-labelledby="sets-heading" className="flex flex-col gap-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <h2 id="groups-heading" className="text-lg font-semibold md:text-xl">
+          <h2 id="sets-heading" className="text-lg font-semibold md:text-xl">
             Word sets
           </h2>
-          <GroupingToggle
+          <ChipToggle
+            label="Group words"
+            options={wordGroupings}
             value={grouping}
             onChange={(by) => setParams({by}, {replace: true})}
           />
         </div>
-        <WordGroupGrid groups={wordGroups(grouping)} />
+        <StudySetGrid
+          sets={wordGroups(grouping)}
+          basePath="/words"
+          noun="words"
+          previewOf={previewOf}
+        />
       </section>
     </div>
   );
