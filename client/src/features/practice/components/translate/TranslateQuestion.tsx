@@ -1,8 +1,7 @@
-import type {TranslateQuestion as Question} from "../../../../types";
-import AnswerLines from "./AnswerLines";
-import QuestionTitle from "../question/QuestionTitle";
 import SpeakButton from "../../../../components/SpeakButton";
-import WordTile from "./WordTile";
+import type {TranslateQuestion as Question} from "../../../../types";
+import QuestionTitle from "../question/QuestionTitle";
+import WordBank from "./WordBank";
 
 interface TranslateQuestionProps {
   question: Question;
@@ -34,31 +33,13 @@ export default function TranslateQuestion({
         </p>
       </div>
 
-      <AnswerLines>
-        {picked.map((wordIndex, position) => (
-          <WordTile
-            key={`${wordIndex}-${position}`}
-            word={question.words[wordIndex]}
-            disabled={locked}
-            onClick={() => onRemove(position)}
-          />
-        ))}
-      </AnswerLines>
-
-      <div
-        aria-label="Word bank"
-        className="flex flex-wrap justify-center gap-2 md:gap-2.5"
-      >
-        {question.words.map((word, i) => (
-          <WordTile
-            key={i}
-            word={word}
-            used={picked.includes(i)}
-            disabled={locked}
-            onClick={() => onPick(i)}
-          />
-        ))}
-      </div>
+      <WordBank
+        words={question.words}
+        picked={picked}
+        onPick={onPick}
+        onRemove={onRemove}
+        locked={locked}
+      />
     </>
   );
 }

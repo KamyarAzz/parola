@@ -25,20 +25,14 @@ export default function PracticePage() {
       <main className="flex-1 px-5 pt-3 pb-5 md:px-8 md:pt-6 md:pb-10">
         <QuestionView
           question={question}
-          topicTitle={practiceSet.title}
-          picked={session.picked}
-          selected={session.selected}
-          checked={checked !== null}
-          onPick={session.pick}
-          onRemove={session.remove}
-          onSelect={session.select}
+          title={practiceSet.title}
+          session={session}
         />
       </main>
 
       {checked ? (
         <FeedbackBar
-          correct={checked.correct}
-          expected={checked.expected}
+          record={checked}
           explanation={
             question.kind === "choice" ? question.explanation : undefined
           }

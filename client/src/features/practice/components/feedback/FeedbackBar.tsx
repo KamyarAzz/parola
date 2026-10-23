@@ -1,21 +1,22 @@
 import {buttonClass} from "../../../../components/button";
 import StatusIcon from "../../../../components/StatusIcon";
+import type {AnswerRecord} from "../../../../types";
 import FeedbackMessage from "./FeedbackMessage";
 
 interface FeedbackBarProps {
-  correct: boolean;
-  expected: string;
+  record: AnswerRecord;
   explanation?: string;
   onContinue: () => void;
 }
 
 /** Bottom bar after an answer is checked. */
 export default function FeedbackBar({
-  correct,
-  expected,
+  record,
   explanation,
   onContinue,
 }: FeedbackBarProps) {
+  const {correct} = record;
+
   return (
     <footer
       role="status"
@@ -24,13 +25,9 @@ export default function FeedbackBar({
       }`}
     >
       <div className="mx-auto flex max-w-240 flex-col gap-3.5 md:flex-row md:items-center md:justify-between md:gap-4">
-        <div className="flex items-start gap-3 md:items-center md:gap-3.5">
+        <div className="flex min-w-0 items-start gap-3 md:items-center md:gap-3.5">
           <StatusIcon correct={correct} />
-          <FeedbackMessage
-            correct={correct}
-            expected={expected}
-            explanation={explanation}
-          />
+          <FeedbackMessage record={record} explanation={explanation} />
         </div>
         <button
           type="button"
@@ -39,7 +36,7 @@ export default function FeedbackBar({
           className={buttonClass(
             correct ? "primary" : "danger",
             "lg",
-            "h-13 md:h-12 md:px-8",
+            "h-13 shrink-0 md:h-12 md:px-8",
           )}
         >
           Continue

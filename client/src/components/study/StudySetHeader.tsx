@@ -9,7 +9,7 @@ interface StudySetHeaderProps<T extends LessonItem> {
   set: StudySet<T>;
   /** Plural name of the items, e.g. "words" */
   noun: string;
-  /** Where "All … sets" goes */
+  /** Where "All sets" goes */
   backTo: string;
 }
 
@@ -26,7 +26,7 @@ export default function StudySetHeader<T extends LessonItem>({
         className="-ml-2 flex min-h-11 w-fit items-center gap-1.5 rounded-[10px] px-2 text-sm font-medium text-muted hover:bg-surface hover:text-ink"
       >
         <ArrowLeft aria-hidden size={18} />
-        All {noun.slice(0, -1)} sets
+        All sets
       </Link>
       <PageHeader
         eyebrow={set.label}

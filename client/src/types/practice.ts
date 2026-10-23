@@ -30,7 +30,23 @@ export interface WordQuestion {
   answer: string;
 }
 
-export type Question = TranslateQuestion | ChoiceQuestion | WordQuestion;
+/** Write a whole Italian sentence from an English prompt. */
+export interface SentenceQuestion {
+  id: string;
+  kind: "sentence";
+  /** English to put into Italian */
+  prompt: string;
+  /** Every accepted answer, already expanded; the first is the model */
+  answers: string[];
+  /** What the other person said just before, in a dialogue */
+  cue?: {speaker: string; it: string; en: string};
+  hint?: string;
+  /** Word bank for the easier tile mode, already shuffled */
+  tiles: string[];
+}
+
+export type Question =
+  TranslateQuestion | ChoiceQuestion | WordQuestion | SentenceQuestion;
 
 export interface AnswerRecord {
   questionId: string;
@@ -39,4 +55,16 @@ export interface AnswerRecord {
   given: string;
   expected: string;
   correct: boolean;
+  /** Extra feedback, e.g. a missing accent on an answer that still counts */
+  note?: string;
+}
+
+/** Everything the learner has entered for the current question. */
+export interface PracticeResponse {
+  /** Word bank indexes, in order (translate questions, sentence tiles) */
+  picked: number[];
+  /** Chosen option (choice and word questions) */
+  selected: string | null;
+  /** Typed or tile-built sentence (sentence questions) */
+  text: string;
 }

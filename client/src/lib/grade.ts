@@ -1,14 +1,23 @@
-import type {AnswerRecord, Question} from "../types";
+import type {AnswerRecord, PracticeResponse, Question} from "../types";
+import {checkSentence} from "./sentenceCheck";
 
-/**
- * Checks the learner's response. `picked` is used for translate questions,
- * `selected` for choice and word questions.
- */
+const noResponse: PracticeResponse = {picked: [], selected: null, text: ""};
+
+/** Checks the learner's response against the question's answer. */
 export function gradeAnswer(
   question: Question,
-  picked: number[],
-  selected: string | null,
+  {picked, selected, text}: PracticeResponse,
 ): AnswerRecord {
+  if (question.kind === "sentence") {
+    const result = checkSentence(text, question.answers);
+    return {
+      questionId: question.id,
+      kind: question.kind,
+      prompt: question.prompt,
+      given: text.trim(),
+      ...result,
+    };
+  }
   if (question.kind === "translate") {
     const given = picked.map((i) => question.words[i]).join(" ");
     const expected = question.answer.join(" ");
@@ -32,13 +41,15 @@ export function gradeAnswer(
 }
 
 export function skippedAnswer(question: Question): AnswerRecord {
-  return {...gradeAnswer(question, [], null), given: "", correct: false};
+  const record = gradeAnswer(question, noResponse);
+  return {...record, given: "", correct: false, note: undefined};
 }
 
 const labels: Record<Question["kind"], string> = {
   translate: "Translate",
   choice: "Fill the gap",
   word: "Vocabulary",
+  sentence: "Write it in Italian",
 };
 
 export function questionLabel(kind: Question["kind"]) {
