@@ -1,4 +1,6 @@
 import type {TestResult} from "../types";
+import {getPracticeSet} from "./practiceSets";
+import {sectionOf, sectionTitle} from "./progress";
 
 export function scoreOf(result: TestResult) {
   const correct = result.answers.filter((a) => a.correct).length;
@@ -41,4 +43,14 @@ export function resultMessage(result: TestResult, justFinished: boolean) {
   if (!justFinished) return `Taken on ${formatDate(result.finishedAt)}`;
   if (scoreOf(result).percent >= 80) return "Nice work. Keep it up!";
   return "Your mistakes have been saved to your focus areas.";
+}
+
+/**
+ * The name of what a test practised, with its section, since lesson sets
+ * share the lesson's name: "Words · Buon appetito!".
+ */
+export function practiceTitle(practiceId: string) {
+  const title = getPracticeSet(practiceId)?.title ?? practiceId;
+  const section = sectionOf(practiceId);
+  return section ? `${sectionTitle(section)} · ${title}` : title;
 }

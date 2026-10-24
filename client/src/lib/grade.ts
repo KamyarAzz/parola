@@ -3,8 +3,7 @@ import {checkSentence} from "./sentenceCheck";
 
 const noResponse: PracticeResponse = {picked: [], selected: null, text: ""};
 
-/** Checks the learner's response against the question's answer. */
-export function gradeAnswer(
+function grade(
   question: Question,
   {picked, selected, text}: PracticeResponse,
 ): AnswerRecord {
@@ -38,6 +37,14 @@ export function gradeAnswer(
     expected: question.answer,
     correct: selected === question.answer,
   };
+}
+
+/** Checks the learner's response against the question's answer. */
+export function gradeAnswer(
+  question: Question,
+  response: PracticeResponse,
+): AnswerRecord {
+  return {...grade(question, response), item: question.item};
 }
 
 export function skippedAnswer(question: Question): AnswerRecord {

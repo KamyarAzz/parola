@@ -2,6 +2,7 @@ import {scenarioFormats, scenarios} from "../data/sentences";
 import type {
   CueStep,
   LineStep,
+  PractisedItem,
   Scenario,
   ScenarioGroup,
   ScenarioStep,
@@ -59,6 +60,14 @@ export function scenarioFormatTag(scenario: Scenario) {
 /** The model answer for a line. */
 export const modelAnswer = (line: LineStep) => expandAnswers(line.it)[0];
 
+/** Progress for a situation is tracked per situation, not per line. */
+export const scenarioItem = (scenario: Scenario): PractisedItem => ({
+  section: "sentences",
+  lesson: scenario.lesson,
+  id: `scenario:${scenario.id}`,
+  label: scenario.title,
+});
+
 /** One question per line, each with the cue that came right before it. */
 function linesOf(scenario: Scenario): SentenceQuestion[] {
   const lines = scenario.steps.filter((step): step is LineStep => !isCue(step));
@@ -68,7 +77,8 @@ function linesOf(scenario: Scenario): SentenceQuestion[] {
     const before = scenario.steps[i - 1];
     const others = models.filter((_, n) => lines[n] !== step);
     const cue = before && isCue(before) ? before : undefined;
-    return [sentenceQuestion(`${scenario.id}-${i}`, step, others, cue)];
+    const item = scenarioItem(scenario);
+    return [sentenceQuestion(`${scenario.id}-${i}`, step, others, item, cue)];
   });
 }
 

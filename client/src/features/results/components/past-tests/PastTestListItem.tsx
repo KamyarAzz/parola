@@ -3,10 +3,10 @@ import {Link} from "react-router";
 import {
   formatDate,
   formatDuration,
+  practiceTitle,
   scoreOf,
   scoreTone,
 } from "../../../../lib/results";
-import {topicTitle} from "../../../../lib/topics";
 import type {TestResult} from "../../../../types";
 
 interface PastTestListItemProps {
@@ -24,7 +24,7 @@ export default function PastTestListItem({result}: PastTestListItemProps) {
       >
         <div className="flex min-w-0 flex-1 flex-col gap-0.5">
           <span className="text-[15px] font-medium">
-            {topicTitle(result.topicId)}
+            {practiceTitle(result.topicId)}
           </span>
           <span className="text-[13px] text-muted">
             {formatDate(result.finishedAt)} ·{" "}

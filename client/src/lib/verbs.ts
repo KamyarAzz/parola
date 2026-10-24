@@ -74,6 +74,12 @@ export function verbQuestions(group: VerbGroup): ChoiceQuestion[] {
       return {
         id: `${group.id}-${i}`,
         kind: "choice",
+        item: {
+          section: "verbs",
+          lesson: verb.lesson,
+          id: `verb:${verb.it}`,
+          label: verb.it,
+        },
         sentence: `${pronoun[0].toUpperCase()}${pronoun.slice(1)} ___ (${verb.it}).`,
         options: shuffle([answer, ...distractors(answer, forms)]),
         answer,

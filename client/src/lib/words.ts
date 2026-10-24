@@ -45,6 +45,12 @@ export function wordQuestions(group: WordGroup): WordQuestion[] {
       return {
         id: `${group.id}-${i}`,
         kind: "word",
+        item: {
+          section: "words",
+          lesson: word.lesson,
+          id: `word:${word.it}`,
+          label: word.it,
+        },
         prompt: lang === "it" ? word.it : word.en,
         lang,
         options: shuffle([word[key], ...distractors(word[key], pool)]),

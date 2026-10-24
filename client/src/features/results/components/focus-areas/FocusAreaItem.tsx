@@ -19,7 +19,7 @@ export default function FocusAreaItem({area}: FocusAreaItemProps) {
       <div className="flex flex-[1_1_220px] items-center gap-3 md:flex-[0_1_340px]">
         <AccuracyMeter accuracy={area.accuracy} mistakes={area.mistakes} />
         <Link
-          to={`/practice/${area.topicId}`}
+          to={`/practice/${area.practiceId}`}
           className={buttonClass("soft", "md", "shrink-0")}
         >
           Practise

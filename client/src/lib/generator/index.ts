@@ -1,6 +1,7 @@
 import type {
   FreshSentenceGroup,
   GeneratedLine,
+  PractisedItem,
   SentenceQuestion,
 } from "../../types";
 import {expandAnswers} from "../sentencePatterns";
@@ -41,28 +42,38 @@ export function getFreshGroup(id: string | undefined) {
 export const freshPracticeId = (lesson?: number) =>
   lesson ? `sentences-fresh-lesson-${lesson}` : allFreshGroup.id;
 
+/** Fresh sentences are tracked per lesson. */
+const freshItem = (lesson: number): PractisedItem => ({
+  section: "sentences",
+  lesson,
+  id: `fresh:${lesson}`,
+  label: `Fresh sentences, Lezione ${lesson}`,
+});
+
 /** New lines, taking turns between the group's templates, with no repeats. */
-function freshLines(group: FreshSentenceGroup): GeneratedLine[] {
+function freshLines(group: FreshSentenceGroup) {
   const templates = shuffle(group.items);
-  const lines: GeneratedLine[] = [];
+  const lines: {line: GeneratedLine; lesson: number}[] = [];
   const prompts = new Set<string>();
   for (let i = 0; lines.length < QUESTIONS_PER_TEST && i < 200; i++) {
-    const line = templates[i % templates.length].make();
+    const template = templates[i % templates.length];
+    const line = template.make();
     if (prompts.has(line.en)) continue;
     prompts.add(line.en);
-    lines.push(line);
+    lines.push({line, lesson: template.lesson});
   }
   return lines;
 }
 
 export function freshQuestions(group: FreshSentenceGroup): SentenceQuestion[] {
   const lines = freshLines(group);
-  const models = lines.map((line) => expandAnswers(line.it)[0]);
-  return lines.map((line, i) =>
+  const models = lines.map(({line}) => expandAnswers(line.it)[0]);
+  return lines.map(({line, lesson}, i) =>
     sentenceQuestion(
       `${group.id}-${i}`,
       line,
       models.filter((_, n) => n !== i),
+      freshItem(lesson),
     ),
   );
 }

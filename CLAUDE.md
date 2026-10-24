@@ -1,7 +1,8 @@
 # Parola
 
-A web app for learning Italian: pick a topic, take a short practice test,
-review results and what to work on next.
+A web app for learning Italian with Nuovo Espresso 1: practise words, verbs,
+grammar and sentences lesson by lesson, then see progress and what to work on
+next.
 
 - `client/` – React 19 + Vite + TypeScript, Tailwind v4, React Router, Zustand,
   lucide-react icons
@@ -94,8 +95,8 @@ the client. Don't skip them with `--no-verify`.
 ## Structure (`client/src/`)
 
 - `app/` – router and app layout
-- `features/<feature>/` – one section of the app (`topics`, `practice`,
-  `results`):
+- `features/<feature>/` – one section of the app (`home`, `words`, `verbs`,
+  `grammar`, `sentences`, `practice`, `results`):
   - `pages/` – components a route renders (the destination in `AppRouter`),
     named `<Name>Page.tsx`
   - `components/` – components used only by this feature, grouped into one
@@ -112,10 +113,11 @@ the client. Don't skip them with `--no-verify`.
     (e.g. `usePracticeSession`), so pages stay small
   - Create a folder only when it has a file in it.
 - `components/` – shared UI
-- `data/` – static data, config and sample data (until the server exists)
+- `data/` – course content (Nuovo Espresso 1, lessons 1–8) and static config.
+  No sample or made-up progress data: progress comes from saved tests.
 - `stores/` – Zustand stores
 - `lib/` – helper functions
-- `types/` – one file per feature or area (`topics.ts`, `practice.ts`,
-  `results.ts`, `ui.ts`), all re-exported from `types/index.ts`. Add new types
+- `types/` – one file per feature or area (`words.ts`, `practice.ts`,
+  `progress.ts`, `results.ts`, `ui.ts`), all re-exported from `types/index.ts`. Add new types
   to the matching file (or a new one, then export it from `index.ts`), and
   always import from `types`, never from a single file inside it.

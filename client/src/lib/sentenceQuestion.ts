@@ -1,4 +1,4 @@
-import type {CueStep, SentenceQuestion} from "../types";
+import type {CueStep, PractisedItem, SentenceQuestion} from "../types";
 import {expandAnswers} from "./sentencePatterns";
 import {shuffle} from "./studySets";
 
@@ -29,6 +29,7 @@ export function sentenceQuestion(
   id: string,
   line: LineToWrite,
   others: string[],
+  item: PractisedItem,
   cue?: CueStep,
 ): SentenceQuestion {
   const answers = expandAnswers(line.it);
@@ -37,6 +38,7 @@ export function sentenceQuestion(
   return {
     id,
     kind: "sentence",
+    item,
     prompt: line.en,
     answers,
     cue,

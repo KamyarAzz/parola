@@ -42,6 +42,12 @@ export function grammarQuestions(group: GrammarGroup): ChoiceQuestion[] {
     .map(({point, exercise}, i) => ({
       id: `${group.id}-${i}`,
       kind: "choice",
+      item: {
+        section: "grammar",
+        lesson: point.lesson,
+        id: `grammar:${point.id}`,
+        label: point.title,
+      },
       sentence: exercise.sentence,
       options: shuffle(exercise.options),
       answer: exercise.answer,

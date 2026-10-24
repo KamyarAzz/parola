@@ -3,10 +3,10 @@ import TableCell from "../../../../components/table/TableCell";
 import {
   formatDate,
   formatDuration,
+  practiceTitle,
   scoreOf,
   scoreTone,
 } from "../../../../lib/results";
-import {topicTitle} from "../../../../lib/topics";
 import type {TestResult} from "../../../../types";
 
 interface PastTestRowProps {
@@ -22,7 +22,7 @@ export default function PastTestRow({result}: PastTestRowProps) {
         {formatDate(result.finishedAt)}
       </TableCell>
       <TableCell className="font-medium">
-        {topicTitle(result.topicId)}
+        {practiceTitle(result.topicId)}
       </TableCell>
       <TableCell
         align="right"

@@ -1,5 +1,12 @@
-export interface TranslateQuestion {
+import type {PractisedItem} from "./progress";
+
+interface QuestionBase {
   id: string;
+  /** What the question practises, for progress and focus areas */
+  item?: PractisedItem;
+}
+
+export interface TranslateQuestion extends QuestionBase {
   kind: "translate";
   /** Italian sentence to translate */
   prompt: string;
@@ -9,8 +16,7 @@ export interface TranslateQuestion {
   answer: string[];
 }
 
-export interface ChoiceQuestion {
-  id: string;
+export interface ChoiceQuestion extends QuestionBase {
   kind: "choice";
   /** Italian sentence with "___" marking the gap */
   sentence: string;
@@ -19,8 +25,7 @@ export interface ChoiceQuestion {
   explanation: string;
 }
 
-export interface WordQuestion {
-  id: string;
+export interface WordQuestion extends QuestionBase {
   kind: "word";
   /** Single word or phrase to translate */
   prompt: string;
@@ -31,8 +36,7 @@ export interface WordQuestion {
 }
 
 /** Write a whole Italian sentence from an English prompt. */
-export interface SentenceQuestion {
-  id: string;
+export interface SentenceQuestion extends QuestionBase {
   kind: "sentence";
   /** English to put into Italian */
   prompt: string;
@@ -57,6 +61,8 @@ export interface AnswerRecord {
   correct: boolean;
   /** Extra feedback, e.g. a missing accent on an answer that still counts */
   note?: string;
+  /** Missing on answers saved before items were tracked */
+  item?: PractisedItem;
 }
 
 /** Everything the learner has entered for the current question. */

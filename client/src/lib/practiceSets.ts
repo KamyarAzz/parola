@@ -1,5 +1,4 @@
-import {getQuestions} from "../data/questions";
-import {getTopic} from "../data/topics";
+import {useResultsStore} from "../stores/resultsStore";
 import type {PracticeSet, Question, StudySet} from "../types";
 import {freshQuestions, getFreshGroup} from "./generator";
 import {getGrammarGroup, grammarQuestions} from "./grammar";
@@ -9,6 +8,7 @@ import {
   groupSentenceQuestions,
   scenarioQuestions,
 } from "./sentences";
+import {REVIEW_ID, reviewQuestions} from "./review";
 import {lessonOfSet} from "./studySets";
 import {getVerbGroup, verbQuestions} from "./verbs";
 import {getWordGroup, wordQuestions} from "./words";
@@ -52,7 +52,7 @@ function findSet(id: string | undefined) {
   }
 }
 
-/** Finds what a practice id points to: a study set, scenario or topic. */
+/** Finds what a practice id points to: a study set, a situation or a review. */
 export function getPracticeSet(
   id: string | undefined,
 ): PracticeSet | undefined {
@@ -77,8 +77,15 @@ export function getPracticeSet(
       homeLabel: "Back to sentences",
     };
   }
-  const topic = getTopic(id);
-  return topic && {...topic, home: "/", homeLabel: "Back to topics"};
+  if (id === REVIEW_ID) {
+    return {
+      id,
+      title: "Your weak spots",
+      italian: "Ripasso",
+      home: "/results",
+      homeLabel: "Back to results",
+    };
+  }
 }
 
 export function getPracticeQuestions(id: string): Question[] {
@@ -86,5 +93,8 @@ export function getPracticeQuestions(id: string): Question[] {
   if (found) return found.source.questions(found.set as never);
   const scenario = getScenario(id);
   if (scenario) return scenarioQuestions(scenario);
-  return getQuestions(id);
+  if (id === REVIEW_ID) {
+    return reviewQuestions(useResultsStore.getState().results);
+  }
+  return [];
 }

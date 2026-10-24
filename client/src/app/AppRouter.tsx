@@ -1,4 +1,5 @@
 import {createBrowserRouter} from "react-router";
+import HomePage from "../features/home/pages/HomePage";
 import GrammarGroupPage from "../features/grammar/pages/GrammarGroupPage";
 import GrammarPage from "../features/grammar/pages/GrammarPage";
 import PracticePage from "../features/practice/pages/PracticePage";
@@ -6,7 +7,6 @@ import ResultDetailPage from "../features/results/pages/ResultDetailPage";
 import ResultsPage from "../features/results/pages/ResultsPage";
 import SentenceGroupPage from "../features/sentences/pages/SentenceGroupPage";
 import SentencesPage from "../features/sentences/pages/SentencesPage";
-import TopicsPage from "../features/topics/pages/TopicsPage";
 import VerbGroupPage from "../features/verbs/pages/VerbGroupPage";
 import VerbsPage from "../features/verbs/pages/VerbsPage";
 import WordGroupPage from "../features/words/pages/WordGroupPage";
@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
   {
     element: <AppLayout />,
     children: [
-      {path: "/", element: <TopicsPage />},
+      {path: "/", element: <HomePage />},
       {path: "/words", element: <WordsPage />},
       {path: "/words/:groupId", element: <WordGroupPage />},
       {path: "/verbs", element: <VerbsPage />},
