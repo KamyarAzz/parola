@@ -16,7 +16,7 @@ export default function GrammarTableRow({
     <tr className="border-b border-line last:border-b-0">
       <th
         scope={header ? "col" : "row"}
-        className="px-2 py-1.5 font-medium whitespace-nowrap text-muted"
+        className="px-1.5 py-1.5 font-medium whitespace-nowrap text-muted md:px-2"
       >
         {label}
       </th>
@@ -24,7 +24,7 @@ export default function GrammarTableRow({
         <Cell
           key={i}
           scope={header ? "col" : undefined}
-          className={`px-2 py-1.5 ${header ? "font-medium" : "font-semibold"}`}
+          className={`px-1.5 py-1.5 md:px-2 ${header ? "font-medium" : "font-semibold"}`}
         >
           {value}
         </Cell>

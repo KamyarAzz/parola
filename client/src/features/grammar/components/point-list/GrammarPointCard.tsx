@@ -10,7 +10,7 @@ interface GrammarPointCardProps {
 /** The rule in a line, a small table if it helps, and an example. */
 export default function GrammarPointCard({point}: GrammarPointCardProps) {
   return (
-    <li className="flex flex-col gap-3 rounded-2xl border border-line bg-surface p-4 md:p-5">
+    <li className="flex min-w-0 flex-col gap-3 rounded-2xl border border-line bg-surface p-4 md:p-5">
       <div className="flex flex-col gap-1">
         <Eyebrow>
           <span lang="it">{point.italian}</span> · Lezione {point.lesson}

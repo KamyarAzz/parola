@@ -10,7 +10,7 @@ export default function GrammarTable({rows}: GrammarTableProps) {
 
   return (
     <div className="overflow-x-auto rounded-xl bg-ground">
-      <table lang="it" className="w-full text-left text-sm">
+      <table lang="it" className="w-full text-left text-[13px] md:text-sm">
         <thead className="text-xs text-muted">
           <GrammarTableRow cells={header} header />
         </thead>
