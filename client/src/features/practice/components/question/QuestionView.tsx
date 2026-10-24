@@ -4,7 +4,6 @@ import type {Question} from "../../../../types";
 import type {PracticeSession} from "../../hooks/usePracticeSession";
 import ChoiceQuestion from "../choice/ChoiceQuestion";
 import SentenceQuestion from "../sentence/SentenceQuestion";
-import TranslateQuestion from "../translate/TranslateQuestion";
 import WordQuestion from "../word/WordQuestion";
 
 interface QuestionViewProps {
@@ -26,17 +25,6 @@ export default function QuestionView({
       <Eyebrow className="-mb-3 md:-mb-6">
         {title} · {questionLabel(question.kind)}
       </Eyebrow>
-      {question.kind === "translate" && (
-        <TranslateQuestion
-          key={question.id}
-          question={question}
-          picked={session.picked}
-          locked={checked}
-          onPick={session.pick}
-          onRemove={session.remove}
-          onArrange={session.arrange}
-        />
-      )}
       {question.kind === "choice" && (
         <ChoiceQuestion
           key={question.id}

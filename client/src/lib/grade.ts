@@ -5,7 +5,7 @@ const noResponse: PracticeResponse = {picked: [], selected: null, text: ""};
 
 function grade(
   question: Question,
-  {picked, selected, text}: PracticeResponse,
+  {selected, text}: PracticeResponse,
 ): AnswerRecord {
   if (question.kind === "sentence") {
     const result = checkSentence(text, question.answers);
@@ -15,18 +15,6 @@ function grade(
       prompt: question.prompt,
       given: text.trim(),
       ...result,
-    };
-  }
-  if (question.kind === "translate") {
-    const given = picked.map((i) => question.words[i]).join(" ");
-    const expected = question.answer.join(" ");
-    return {
-      questionId: question.id,
-      kind: question.kind,
-      prompt: question.prompt,
-      given,
-      expected,
-      correct: given === expected,
     };
   }
   return {
@@ -53,7 +41,6 @@ export function skippedAnswer(question: Question): AnswerRecord {
 }
 
 const labels: Record<Question["kind"], string> = {
-  translate: "Translate",
   choice: "Fill the gap",
   word: "Vocabulary",
   sentence: "Write it in Italian",

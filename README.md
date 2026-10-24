@@ -1,37 +1,38 @@
 # Parola
 
-Learn Italian with short, focused practice tests. Pick a topic, answer a few
-questions, and see exactly what to work on next.
+Learn Italian with Nuovo Espresso 1 (lessons 1–8): practise the words, verbs,
+grammar and sentences of each lesson, and see exactly what to work on next.
 
-> Status: early development. The client runs on sample data; the server is not
-> started yet.
-
-<!-- TODO: add a screenshot or GIF of the app -->
+> Status: the client is complete and works offline as an installable app.
+> Progress is saved on each device; the server (accounts, sync) comes later.
 
 ## Features
 
-- **Topics**: browse vocabulary and grammar topics by level (A1–B1) and search
-  them
-- **Practice tests**: translate sentences with a word bank or fill the gap,
-  with instant feedback and Italian audio
-- **Results**: scores for past tests, plus focus areas built from your mistakes
-- Works on desktop and mobile
+- **Words**: 265 words from lessons 1–8, by lesson or topic, with audio
+- **Verbs**: 43 verbs with all six present-tense forms, by lesson or type
+- **Grammar**: short summaries with tables, examples and fill-the-gap tests
+- **Sentences**: dialogues, short texts and drills, plus endless generated
+  sentences; type the Italian or use drag-and-drop word tiles, with
+  word-by-word feedback
+- **Practice home**: pick up where you left off, suggested next steps and
+  progress per lesson
+- **Results**: scores, focus areas built from your mistakes and a test of just
+  your weak spots
+- Light and dark theme, works on desktop and mobile, installable (PWA)
 
 ### Planned
 
-- [ ] Accounts and sign-in
-- [ ] Profile
-- [ ] Daily streaks
-- [ ] Save results on the server
-<!-- TODO: add more as the project grows -->
+- [ ] Accounts, and progress synced between devices
+- [ ] Daily streaks and reminders
+- [ ] A2 level
 
 ## Tech stack
 
-| Part   | Stack                                                                  |
-| ------ | ---------------------------------------------------------------------- |
-| Client | React 19, Vite, TypeScript, Tailwind CSS v4, React Router, Zustand     |
-| Server | _TODO: Node.js + Express, database to be decided_                      |
-| Tools  | ESLint, Prettier, Husky, lint-staged                                   |
+| Part   | Stack                                                              |
+| ------ | ------------------------------------------------------------------ |
+| Client | React 19, Vite, TypeScript, Tailwind CSS v4, React Router, Zustand |
+| Server | Node.js, Express, PostgreSQL with Drizzle (skeleton only for now)  |
+| Tools  | ESLint, Prettier, Husky, lint-staged                               |
 
 ## Project structure
 
@@ -57,7 +58,8 @@ npm install            # root: git hooks
 npm install --prefix client
 ```
 
-<!-- TODO: add server install steps -->
+The server is a skeleton for later (see [server/README.md](server/README.md));
+the app doesn't need it.
 
 ### Run
 
@@ -67,12 +69,12 @@ npm run dev            # starts the client on http://localhost:5173
 
 ## Scripts (from the repo root)
 
-| Command          | What it does                     |
-| ---------------- | -------------------------------- |
-| `npm run dev`    | Start the client dev server      |
-| `npm run build`  | Type-check and build the client  |
-| `npm run lint`   | Lint the client                  |
-| `npm run format` | Format the client with Prettier  |
+| Command          | What it does                    |
+| ---------------- | ------------------------------- |
+| `npm run dev`    | Start the client dev server     |
+| `npm run build`  | Type-check and build the client |
+| `npm run lint`   | Lint the client                 |
+| `npm run format` | Format the client with Prettier |
 
 ## Git hooks
 
@@ -84,11 +86,11 @@ npm run dev            # starts the client on http://localhost:5173
 Coding conventions (components, styling, folder structure) are in
 [CLAUDE.md](CLAUDE.md).
 
-<!-- TODO: branch naming and commit message conventions -->
-
 ## Deployment
 
-<!-- TODO: where and how the client and server are deployed -->
+The client deploys to Vercel from `main`: root directory `client`, framework
+Vite (see [client/vercel.json](client/vercel.json)). Every push to `main`
+redeploys, and the installed app updates itself on the next visit.
 
 ## License
 

@@ -1,7 +1,8 @@
 # Parola client
 
-The Parola web app: topics, practice tests and results. Built with React 19,
-Vite, TypeScript, Tailwind CSS v4, React Router and Zustand.
+The Parola web app: words, verbs, grammar and sentence practice for Nuovo
+Espresso 1, a practice home and results. Built with React 19, Vite, TypeScript,
+Tailwind CSS v4, React Router and Zustand; installable as a PWA.
 
 Design: [Parola canvas](https://claude.ai/artifact/6X519kZCHzDS4whNGfQHw9)
 (desktop and mobile screens)
@@ -30,11 +31,12 @@ npm run dev     # http://localhost:5173
 src/
 ├── app/            Router and app layout
 ├── components/     Shared UI (buttons, cards, table cells, …)
-├── data/           Static config and sample data
+├── data/           Course content (lessons 1–8) and static config
 ├── features/
-│   ├── practice/   pages/, components/, hooks/
-│   ├── results/    pages/, components/
-│   └── topics/     pages/, components/
+│   ├── home/       Practice home: continue, suggestions, lesson progress
+│   ├── words/      verbs/  grammar/  sentences/   Study sets per section
+│   ├── practice/   The test screen: pages/, components/, hooks/
+│   └── results/    Results, focus areas and test review
 ├── lib/            Helper functions
 ├── stores/         Zustand stores
 ├── styles/         Tailwind theme (colours, font)
@@ -43,26 +45,24 @@ src/
 
 ## Routes
 
-| Path                 | Page                        |
-| -------------------- | --------------------------- |
-| `/`                  | Topics                      |
-| `/practice/:topicId` | Practice test (full screen) |
-| `/results`           | Results and focus areas     |
-| `/results/:resultId` | Test complete / test review |
+| Path                                         | Page                                                         |
+| -------------------------------------------- | ------------------------------------------------------------ |
+| `/`                                          | Practice home                                                |
+| `/words`, `/verbs`, `/grammar`, `/sentences` | Sets for each section, and `/<section>/:groupId` for one set |
+| `/practice/:topicId`                         | Practice test (full screen)                                  |
+| `/results`                                   | Results and focus areas                                      |
+| `/results/:resultId`                         | Test complete / test review                                  |
 
 ## Data
 
-Topics, questions and past results come from sample data in `src/data/`.
-Results you create are saved in the browser (localStorage) until the server is
-ready.
-
-<!-- TODO: describe the API client once the server exists -->
+Lesson content (words, verbs, grammar, sentence situations and the templates
+for generated sentences) lives in `src/data/` and `src/lib/generator/`. There is
+no sample progress data: results come only from tests you take, saved in the
+browser (localStorage) until the server is ready.
 
 ## Environment variables
 
-<!-- TODO: e.g. VITE_API_URL once the client talks to the server -->
-
-_None yet._
+None: the client doesn't call an API yet.
 
 ## Theme
 

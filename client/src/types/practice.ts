@@ -6,16 +6,6 @@ interface QuestionBase {
   item?: PractisedItem;
 }
 
-export interface TranslateQuestion extends QuestionBase {
-  kind: "translate";
-  /** Italian sentence to translate */
-  prompt: string;
-  /** Word bank, already in display order */
-  words: string[];
-  /** Correct answer as words from the bank, in order */
-  answer: string[];
-}
-
 export interface ChoiceQuestion extends QuestionBase {
   kind: "choice";
   /** Italian sentence with "___" marking the gap */
@@ -49,8 +39,7 @@ export interface SentenceQuestion extends QuestionBase {
   tiles: string[];
 }
 
-export type Question =
-  TranslateQuestion | ChoiceQuestion | WordQuestion | SentenceQuestion;
+export type Question = ChoiceQuestion | WordQuestion | SentenceQuestion;
 
 export interface AnswerRecord {
   questionId: string;
@@ -67,7 +56,7 @@ export interface AnswerRecord {
 
 /** Everything the learner has entered for the current question. */
 export interface PracticeResponse {
-  /** Word bank indexes, in order (translate questions, sentence tiles) */
+  /** Word bank indexes, in order (sentence tiles) */
   picked: number[];
   /** Chosen option (choice and word questions) */
   selected: string | null;

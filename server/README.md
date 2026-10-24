@@ -1,49 +1,56 @@
 # Parola server
 
-The Parola API: accounts, topics and questions, and saving test results.
+The Parola API, for later: accounts and saving test results so progress syncs
+between devices.
 
-> Status: not started yet.
+> Status: skeleton only. The app runs fully in the browser today; nothing calls
+> this server yet.
 
 ## Tech stack
 
-<!-- TODO: confirm once set up -->
-
-- Node.js + Express (TypeScript)
-- Database: _TODO_
-- Validation: _TODO_
+- Node.js + Express 5 (TypeScript, run with `tsx` in development)
+- PostgreSQL with Drizzle ORM and drizzle-kit migrations
+- Zod for validating environment variables
+- Helmet (security headers) and CORS
 
 ## Getting started
 
-<!-- TODO -->
-
 ```bash
 npm install
-npm run dev
+cp .env.example .env   # then fill in DATABASE_URL
+npm run dev            # http://localhost:3000
 ```
 
 ## Environment variables
 
-Copy `.env.example` to `.env` and fill in the values.
-
-<!-- TODO: list each variable -->
-
-| Variable       | Description |
-| -------------- | ----------- |
-| `PORT`         | _TODO_      |
-| `DATABASE_URL` | _TODO_      |
+| Variable       | Description                                       |
+| -------------- | ------------------------------------------------- |
+| `PORT`         | Port to listen on (default `3000`)                |
+| `DATABASE_URL` | PostgreSQL connection string                      |
+| `CLIENT_URL`   | Origin allowed by CORS (default the Vite dev URL) |
 
 ## API
 
-<!-- TODO: document endpoints as they are added -->
-
-| Method | Path | Description |
-| ------ | ---- | ----------- |
-|        |      |             |
+| Method | Path          | Description                     |
+| ------ | ------------- | ------------------------------- |
+| GET    | `/api/health` | `{"status": "ok"}` when it's up |
 
 ## Folder structure
 
-<!-- TODO -->
+```
+src/
+├── app.ts          Express app: middleware and routes
+├── server.ts       Starts the app
+├── config/env.ts   Validated environment variables
+└── db/
+    ├── index.ts    Shared database connection
+    └── schema.ts   Tables (none yet)
+```
 
 ## Database
 
-<!-- TODO: schema, migrations and seeding -->
+| Command               | What it does                               |
+| --------------------- | ------------------------------------------ |
+| `npm run db:generate` | Create a migration from `src/db/schema.ts` |
+| `npm run db:migrate`  | Apply migrations                           |
+| `npm run db:studio`   | Browse the database                        |

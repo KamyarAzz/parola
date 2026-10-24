@@ -8,8 +8,7 @@
     "start": "node --env-file-if-exists=.env dist/server.js",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:studio": "drizzle-kit studio",
-    "db:seed": "tsx --env-file=.env src/db/seed.ts"
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "cors": "^2.8.6",

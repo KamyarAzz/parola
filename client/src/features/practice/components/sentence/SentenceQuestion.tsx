@@ -1,7 +1,7 @@
 import type {SentenceQuestion as Question} from "../../../../types";
 import type {PracticeSession} from "../../hooks/usePracticeSession";
 import QuestionTitle from "../question/QuestionTitle";
-import WordBank from "../translate/WordBank";
+import WordBank from "../word-bank/WordBank";
 import InputModeToggle from "./InputModeToggle";
 import SentenceCue from "./SentenceCue";
 import SentenceInput from "./SentenceInput";

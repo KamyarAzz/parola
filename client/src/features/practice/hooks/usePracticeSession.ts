@@ -45,9 +45,7 @@ export default function usePracticeSession(practiceId: string) {
 
   const question = activeId === practiceId ? questions[index] : undefined;
   const text = sentenceText(question, tileMode, picked, typed);
-  const usesBank =
-    question?.kind === "translate" ||
-    (question?.kind === "sentence" && tileMode);
+  const usesBank = question?.kind === "sentence" && tileMode;
 
   const record = (result: AnswerRecord) => {
     answer(result);
