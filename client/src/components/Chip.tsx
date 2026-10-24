@@ -13,7 +13,7 @@ export default function Chip({label, active, onClick}: ChipProps) {
       onClick={onClick}
       className={`h-11 rounded-full border px-4 text-sm font-semibold ${
         active
-          ? "border-ink bg-ink text-white"
+          ? "border-ink bg-ink text-surface"
           : "border-line-strong bg-surface hover:border-ink"
       }`}
     >

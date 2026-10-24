@@ -21,7 +21,28 @@
       href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap"
     />
     <meta name="author" content="Kamyar Azizi" />
-    <meta name="theme-color" content="#0e6b4e" />
+    <meta name="theme-color" content="#f4f5f2" />
+    <script>
+      // Set the theme before the first paint so dark mode never flashes light.
+      // Same rules as lib/theme.ts; the setting is saved by stores/settingsStore.
+      (function () {
+        var preference = "system";
+        try {
+          var saved = JSON.parse(localStorage.getItem("parola-settings"));
+          preference = (saved && saved.state && saved.state.theme) || "system";
+        } catch (e) {}
+        var dark =
+          preference === "dark" ||
+          (preference === "system" &&
+            matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.dataset.theme = dark ? "dark" : "light";
+        if (dark) {
+          document
+            .querySelector('meta[name="theme-color"]')
+            .setAttribute("content", "#111315");
+        }
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="mobile-web-app-capable" content="yes" />

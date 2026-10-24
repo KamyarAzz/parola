@@ -2,6 +2,7 @@ import {NavLink} from "react-router";
 import {appInfo} from "../data/appInfo";
 import {navItems} from "../data/navItems";
 import Credit from "./Credit";
+import ThemeSwitch from "./theme/ThemeSwitch";
 import Logo from "./Logo";
 
 export default function Navbar() {
@@ -29,7 +30,10 @@ export default function Navbar() {
           </NavLink>
         ))}
       </nav>
-      <Credit author={appInfo.author} className="mt-auto px-3" />
+      <div className="mt-auto flex flex-col gap-4">
+        <ThemeSwitch />
+        <Credit author={appInfo.author} className="px-3" />
+      </div>
     </aside>
   );
 }

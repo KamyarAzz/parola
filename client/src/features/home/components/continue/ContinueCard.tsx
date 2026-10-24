@@ -12,13 +12,13 @@ interface ContinueCardProps {
 /** The last test you took, to go again. */
 export default function ContinueCard({last}: ContinueCardProps) {
   return (
-    <div className="flex flex-col gap-4 rounded-2xl bg-ink p-5 text-white md:p-6">
+    <div className="flex flex-col gap-4 rounded-2xl bg-panel p-5 text-on-panel md:p-6">
       <Eyebrow tone="onDark">Pick up where you left off</Eyebrow>
       <div className="flex flex-col gap-1">
         <span className="text-xl font-semibold md:text-[22px]">
           {last.title}
         </span>
-        <span className="text-sm text-ink-pale md:text-[15px]">
+        <span className="text-sm text-on-panel-muted md:text-[15px]">
           {last.detail}
         </span>
       </div>

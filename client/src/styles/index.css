@@ -10,15 +10,21 @@
   --color-track: #eceeea;
   --color-ink: #15181a;
   --color-muted: #5b6168;
-  --color-ink-soft: #a9b0b6;
-  --color-ink-pale: #c9ced2;
-  --color-ink-raised: #343a3f;
   --color-ground-soft: #fafbf9;
+
+  /* Dark banners (continue, mix) and what sits on them */
+  --color-panel: #15181a;
+  --color-panel-raised: #343a3f;
+  --color-on-panel: #ffffff;
+  --color-on-panel-muted: #c9ced2;
+  --color-on-panel-soft: #a9b0b6;
 
   --color-brand: #0e6b4e;
   --color-brand-dark: #0a5039;
   --color-brand-soft: #e3f1ea;
   --color-brand-glow: #6fd3a8;
+  /* Text on brand-coloured buttons */
+  --color-on-brand: #ffffff;
 
   --color-warn: #c77a12;
   --color-warn-ink: #7a4505;
@@ -29,6 +35,58 @@
   --color-error-ink: #8a2418;
   --color-error-soft: #fbe9e6;
   --color-error-line: #d9a39b;
+  --color-on-error: #ffffff;
+}
+
+/*
+ * Night theme: soft charcoal instead of black, off-white text, and a
+ * brighter green with dark text on buttons so nothing glares. The theme is
+ * set on <html> by a script in index.html and lib/theme.ts.
+ */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-ground: #111315;
+  --color-surface: #1a1d20;
+  --color-line: #2a2f33;
+  --color-line-strong: #383e43;
+  --color-track: #262b2f;
+  --color-ink: #e6e9e5;
+  --color-muted: #9aa1a7;
+  --color-ground-soft: #202427;
+
+  --color-panel: #23292d;
+  --color-panel-raised: #3a4247;
+  --color-on-panel: #f1f3f0;
+  --color-on-panel-muted: #b9c0c5;
+  --color-on-panel-soft: #949ca2;
+
+  --color-brand: #4cbf92;
+  --color-brand-dark: #7dd5b2;
+  --color-brand-soft: #173429;
+  --color-brand-glow: #6fd3a8;
+  --color-on-brand: #0b2019;
+
+  --color-warn: #e0a24a;
+  --color-warn-ink: #f2c47f;
+  --color-warn-soft: #36290f;
+  --color-warn-body: #ead2a8;
+
+  --color-error: #e5776a;
+  --color-error-ink: #ffb3a8;
+  --color-error-soft: #3a1a17;
+  --color-error-line: #80392f;
+  --color-on-error: #2b0e0a;
+}
+
+/* While switching themes, fade colours instead of flashing */
+.theme-switching,
+.theme-switching * {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    fill 0.3s ease !important;
 }
 
 html,

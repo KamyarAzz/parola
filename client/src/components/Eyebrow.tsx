@@ -9,7 +9,7 @@ interface EyebrowProps {
 
 const tones = {
   muted: "text-muted",
-  onDark: "text-ink-soft",
+  onDark: "text-on-panel-soft",
   warn: "text-warn-ink",
 };
 

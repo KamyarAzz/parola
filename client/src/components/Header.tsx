@@ -1,9 +1,11 @@
 import Logo from "./Logo";
+import ThemeToggleButton from "./theme/ThemeToggleButton";
 
 export default function Header() {
   return (
-    <header className="flex items-center border-b border-line bg-surface px-5 py-4 md:hidden">
+    <header className="flex items-center justify-between border-b border-line bg-surface py-2.5 pr-3 pl-5 md:hidden">
       <Logo />
+      <ThemeToggleButton />
     </header>
   );
 }

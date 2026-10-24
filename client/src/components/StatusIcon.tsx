@@ -16,8 +16,8 @@ export default function StatusIcon({correct, size = "md"}: StatusIconProps) {
 
   return (
     <div
-      className={`flex shrink-0 items-center justify-center rounded-full text-white ${
-        correct ? "bg-brand" : "bg-error"
+      className={`flex shrink-0 items-center justify-center rounded-full ${
+        correct ? "bg-brand text-on-brand" : "bg-error text-on-error"
       } ${sizes[size]}`}
     >
       <Icon aria-hidden size={size === "lg" ? 28 : 22} strokeWidth={2.5} />

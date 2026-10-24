@@ -9,8 +9,8 @@ interface SpeakButtonProps {
 
 const variants = {
   solid:
-    "size-11 rounded-xl bg-brand text-white hover:bg-brand-dark md:size-13 md:rounded-[14px]",
-  soft: "size-11 rounded-[10px] bg-brand-soft text-brand hover:bg-brand hover:text-white",
+    "size-11 rounded-xl bg-brand text-on-brand hover:bg-brand-dark md:size-13 md:rounded-[14px]",
+  soft: "size-11 rounded-[10px] bg-brand-soft text-brand hover:bg-brand hover:text-on-brand",
 };
 
 /** Reads Italian text aloud with the browser's built-in speech. */

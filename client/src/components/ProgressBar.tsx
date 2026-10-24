@@ -12,7 +12,7 @@ interface ProgressBarProps {
 const tones = {
   brand: {track: "bg-track", bar: "bg-brand"},
   warn: {track: "bg-track", bar: "bg-warn"},
-  onDark: {track: "bg-ink-raised", bar: "bg-brand-glow"},
+  onDark: {track: "bg-panel-raised", bar: "bg-brand-glow"},
 };
 
 export default function ProgressBar({

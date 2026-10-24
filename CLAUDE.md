@@ -87,6 +87,11 @@ the client. Don't skip them with `--no-verify`.
   `min-h-[52px]` → `min-h-13`, `max-w-[1080px]` → `max-w-270`,
   `size-[52px]` → `size-13`. Use `[…]` only when no class fits (e.g.
   `text-[15px]`, `rounded-[10px]`).
+- Light and dark theme come from the same tokens (dark values live under
+  `:root[data-theme="dark"]` in `index.css`), so never use `text-white`,
+  `bg-black` or `bg-white`. Text on brand or error buttons is `text-on-brand` /
+  `text-on-error`; dark banners use `bg-panel` with `text-on-panel`. When
+  adding a token, give it a dark value too.
 - Mobile first: base classes for phones, `md:` for desktop.
 - Accessible by default: real `<button>` / `<a>` / `<label>`, `aria-label` on
   icon-only buttons, `aria-hidden` on decorative icons, touch targets at least

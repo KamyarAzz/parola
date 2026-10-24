@@ -16,7 +16,7 @@ export default function MixBanner<T>({set, noun}: MixBannerProps<T>) {
   return (
     <section
       aria-labelledby="mix-heading"
-      className="flex flex-col gap-4 rounded-2xl bg-ink p-5 text-white md:flex-row md:items-center md:justify-between md:p-6"
+      className="flex flex-col gap-4 rounded-2xl bg-panel p-5 text-on-panel md:flex-row md:items-center md:justify-between md:p-6"
     >
       <div className="flex flex-col gap-1.5">
         <Eyebrow tone="onDark">{set.label}</Eyebrow>
@@ -26,7 +26,7 @@ export default function MixBanner<T>({set, noun}: MixBannerProps<T>) {
         >
           Mix of {set.items.length} {noun}
         </h2>
-        <p className="text-sm text-ink-pale md:text-[15px]">
+        <p className="text-sm text-on-panel-muted md:text-[15px]">
           {set.description}
         </p>
       </div>
