@@ -299,4 +299,22 @@ export const scenariosLessons1to4: Scenario[] = [
       say("I work from Monday to Friday.", "Lavoro dal lunedì al venerdì."),
     ],
   },
+  {
+    id: "me-too",
+    lesson: 4,
+    format: "drill",
+    title: "Me too, me neither",
+    italian: "Anche a me!",
+    intro: "React to what a friend likes or doesn't like.",
+    steps: [
+      cue("Friend", "Mi piace molto il jazz.", "I really like jazz."),
+      say("Me too!", "Anche a me!"),
+      cue("Friend", "Non mi piace il calcio.", "I don't like football."),
+      say("Me neither.", "Neanche a me."),
+      cue("Friend", "Mi piacciono i film gialli.", "I like crime films."),
+      say("I don't. I prefer comedies.", "A me no. Preferisco le commedie."),
+      cue("Friend", "Non mi piace ballare.", "I don't like dancing."),
+      say("I do! And do you like reading?", "A me sì! E a te piace leggere?"),
+    ],
+  },
 ];

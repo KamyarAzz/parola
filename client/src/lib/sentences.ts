@@ -1,3 +1,4 @@
+import {lessonRange} from "../data/lessons";
 import {scenarioFormats, scenarios} from "../data/sentences";
 import type {
   CueStep,
@@ -22,7 +23,7 @@ export const isCue = (step: ScenarioStep): step is CueStep => "speaker" in step;
 
 export const allScenariosGroup: ScenarioGroup = {
   id: "sentences-all",
-  label: "Lezioni 1–8",
+  label: `Lezioni ${lessonRange}`,
   title: "All situations",
   description: "Every dialogue, text and drill from the lessons you've studied",
   items: scenarios,

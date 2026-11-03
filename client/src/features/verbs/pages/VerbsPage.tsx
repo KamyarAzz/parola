@@ -1,3 +1,4 @@
+import {lessonRange} from "../../../data/lessons";
 import {useSearchParams} from "react-router";
 import ChipToggle from "../../../components/ChipToggle";
 import PageHeader from "../../../components/PageHeader";
@@ -20,7 +21,7 @@ export default function VerbsPage() {
       <PageHeader
         eyebrow="Nuovo Espresso 1"
         title="Practise verbs"
-        description="Verbs from lessons 1–8 in the present tense, io to loro. Look over the forms, then test yourself."
+        description={`Verbs from lessons ${lessonRange} in the present tense, io to loro. Look over the forms, then test yourself.`}
         hideDescriptionOnMobile
       />
 

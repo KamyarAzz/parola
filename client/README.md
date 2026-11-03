@@ -31,7 +31,7 @@ npm run dev     # http://localhost:5173
 src/
 ├── app/            Router and app layout
 ├── components/     Shared UI (buttons, cards, table cells, …)
-├── data/           Course content (lessons 1–8) and static config
+├── data/           Course content (lessons 1–10) and static config
 ├── features/
 │   ├── home/       Practice home: continue, suggestions, lesson progress
 │   ├── words/      verbs/  grammar/  sentences/   Study sets per section

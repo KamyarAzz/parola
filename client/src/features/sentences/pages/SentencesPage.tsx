@@ -3,7 +3,7 @@ import ChipToggle from "../../../components/ChipToggle";
 import PageHeader from "../../../components/PageHeader";
 import MixBanner from "../../../components/study/MixBanner";
 import StudySetGrid from "../../../components/study/StudySetGrid";
-import {lessons} from "../../../data/lessons";
+import {lessonRange, lessons} from "../../../data/lessons";
 import {sentenceGroupings} from "../../../data/sentences";
 import {allScenariosGroup, scenarioGroups} from "../../../lib/sentences";
 import type {Scenario, SentenceGrouping} from "../../../types";
@@ -23,7 +23,7 @@ export default function SentencesPage() {
       <PageHeader
         eyebrow="Nuovo Espresso 1"
         title="Build sentences"
-        description="Say real things in Italian: dialogues, short texts and drills from lessons 1–8. Type each line, or use word tiles if you're stuck."
+        description={`Say real things in Italian: dialogues, short texts and drills from lessons ${lessonRange}. Type each line, or use word tiles if you're stuck.`}
         hideDescriptionOnMobile
       />
 

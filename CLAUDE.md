@@ -118,7 +118,7 @@ the client. Don't skip them with `--no-verify`.
     (e.g. `usePracticeSession`), so pages stay small
   - Create a folder only when it has a file in it.
 - `components/` – shared UI
-- `data/` – course content (Nuovo Espresso 1, lessons 1–8) and static config.
+- `data/` – course content (Nuovo Espresso 1, lessons 1–10) and static config.
   No sample or made-up progress data: progress comes from saved tests.
 - `stores/` – Zustand stores
 - `lib/` – helper functions

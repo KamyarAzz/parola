@@ -28,6 +28,12 @@ export const verbTypes: VerbTypeInfo[] = [
     tag: "-isc-",
   },
   {
+    id: "reflexive",
+    title: "Reflexive verbs",
+    italian: "Verbi riflessivi",
+    tag: "riflessivo",
+  },
+  {
     id: "irregular",
     title: "Irregular verbs",
     italian: "Verbi irregolari",
@@ -40,8 +46,8 @@ export const verbGroupings: GroupingOption<VerbGrouping>[] = [
   {value: "type", label: "By type"},
 ];
 
-// Verbs from Nuovo Espresso 1, lessons 1–8. Regular verbs are conjugated in
-// lib/verbs.ts; irregular ones list their present tense forms.
+// Verbs from Nuovo Espresso 1, lessons 1–10. Regular and reflexive verbs are
+// conjugated in lib/verbs.ts; irregular ones list their present tense forms.
 export const verbs: Verb[] = [
   // Lezione 1
   {
@@ -51,20 +57,7 @@ export const verbs: Verb[] = [
     type: "irregular",
     forms: ["sono", "sei", "è", "siamo", "siete", "sono"],
   },
-  {
-    it: "chiamarsi",
-    en: "to be called",
-    lesson: 1,
-    type: "irregular",
-    forms: [
-      "mi chiamo",
-      "ti chiami",
-      "si chiama",
-      "ci chiamiamo",
-      "vi chiamate",
-      "si chiamano",
-    ],
-  },
+  {it: "chiamarsi", en: "to be called", lesson: 1, type: "reflexive"},
   {it: "parlare", en: "to speak", lesson: 1, type: "are"},
 
   // Lezione 2
@@ -192,4 +185,59 @@ export const verbs: Verb[] = [
     type: "irregular",
     forms: ["do", "dai", "dà", "diamo", "date", "danno"],
   },
+
+  // Lezione 9
+  {it: "svegliarsi", en: "to wake up", lesson: 9, type: "reflexive"},
+  {it: "alzarsi", en: "to get up", lesson: 9, type: "reflexive"},
+  {it: "lavarsi", en: "to wash (yourself)", lesson: 9, type: "reflexive"},
+  {it: "vestirsi", en: "to get dressed", lesson: 9, type: "reflexive"},
+  {it: "riposarsi", en: "to rest", lesson: 9, type: "reflexive"},
+  {it: "divertirsi", en: "to have fun", lesson: 9, type: "reflexive"},
+  {it: "annoiarsi", en: "to get bored", lesson: 9, type: "reflexive"},
+  {it: "mettersi", en: "to put on (clothes)", lesson: 9, type: "reflexive"},
+  {
+    it: "farsi",
+    en: "to have (a shower), to make yourself",
+    lesson: 9,
+    type: "reflexive",
+    forms: [
+      "mi faccio",
+      "ti fai",
+      "si fa",
+      "ci facciamo",
+      "vi fate",
+      "si fanno",
+    ],
+  },
+  {it: "pranzare", en: "to have lunch", lesson: 9, type: "are"},
+  {it: "cenare", en: "to have dinner", lesson: 9, type: "are"},
+  {it: "correre", en: "to run", lesson: 9, type: "ere"},
+
+  // Lezione 10
+  {it: "sposarsi", en: "to get married", lesson: 10, type: "reflexive"},
+  {it: "sentirsi", en: "to feel", lesson: 10, type: "reflexive"},
+  {
+    it: "trasferirsi",
+    en: "to move (house)",
+    lesson: 10,
+    type: "reflexive",
+    forms: [
+      "mi trasferisco",
+      "ti trasferisci",
+      "si trasferisce",
+      "ci trasferiamo",
+      "vi trasferite",
+      "si trasferiscono",
+    ],
+  },
+  {
+    it: "conoscere",
+    en: "to know (a person) / to meet",
+    lesson: 10,
+    type: "ere",
+  },
+  {it: "nascere", en: "to be born", lesson: 10, type: "ere"},
+  {it: "vivere", en: "to live", lesson: 10, type: "ere"},
+  {it: "telefonare", en: "to phone", lesson: 10, type: "are"},
+  {it: "regalare", en: "to give (as a present)", lesson: 10, type: "are"},
 ];

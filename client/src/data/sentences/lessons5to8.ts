@@ -182,6 +182,36 @@ export const scenariosLessons5to8: Scenario[] = [
     ],
   },
 
+  {
+    id: "there-and-many",
+    lesson: 6,
+    format: "drill",
+    title: "Going there, lots to see",
+    italian: "Ci vado, molti musei",
+    intro: "Talk about places in town. Use ci for a place you've just named.",
+    steps: [
+      say(
+        "Do you often go to the cinema? Yes, I go there every Saturday.",
+        "Vai spesso al cinema? Sì, ci vado ogni sabato.",
+      ),
+      say("Bologna? I'm going there tomorrow.", "Bologna? Ci vado domani."),
+      say(
+        "In Bologna there are a lot of museums and a lot of shops.",
+        "A Bologna ci sono molti musei e molti negozi.",
+      ),
+      say(
+        "There are lots of people in the square.",
+        "In piazza c'è molta gente.",
+      ),
+      say("The city is very lively.", "La città è molto vivace."),
+      say(
+        "Excuse me, is there a pharmacy near here?",
+        "Scusi, c'è una farmacia qui vicino?",
+      ),
+      say("Excuse me, where is the station?", "Scusi, dov'è la stazione?"),
+    ],
+  },
+
   // Lezione 7
   {
     id: "last-weekend",
@@ -286,6 +316,39 @@ export const scenariosLessons5to8: Scenario[] = [
     ],
   },
 
+  {
+    id: "very-and-some",
+    lesson: 7,
+    format: "drill",
+    title: "A wonderful holiday",
+    italian: "Bellissimo!",
+    intro: "Tell a friend about your holiday with -issimo and qualche.",
+    steps: [
+      say(
+        "The trip was really beautiful.",
+        "Il viaggio è stato bellissimo.",
+        "Use -issimo, not molto",
+      ),
+      say(
+        "We took a really long walk.",
+        "Abbiamo fatto una passeggiata lunghissima.",
+      ),
+      say(
+        "I went to bed really late.",
+        "Sono [andato|andata] a letto tardissimo.",
+      ),
+      say(
+        "We stayed in Naples a few days.",
+        "Siamo [rimasti|rimaste|stati|state] a Napoli qualche giorno.",
+      ),
+      say(
+        "Tomorrow there will be a few clouds.",
+        "Domani c'è qualche nuvola.",
+        "Use the present tense",
+      ),
+    ],
+  },
+
   // Lezione 8
   {
     id: "at-the-market",
@@ -350,6 +413,60 @@ export const scenariosLessons5to8: Scenario[] = [
       say("There isn't any sugar.", "Non c'è (più) zucchero."),
       say("The wine? I'll buy it.", "Il vino? Lo compro io."),
       say("See you later!", "A dopo!"),
+    ],
+  },
+  {
+    id: "in-italy",
+    lesson: 8,
+    format: "drill",
+    title: "How things are done in Italy",
+    italian: "In Italia si fa così",
+    intro: "Tell a visitor about habits in Italy, using si.",
+    steps: [
+      say("In Italy people have dinner late.", "In Italia si cena tardi."),
+      say(
+        "You don't drink cappuccino after meals.",
+        "Non si beve il cappuccino dopo i pasti.",
+      ),
+      say(
+        "You eat spaghetti with a fork.",
+        "Gli spaghetti si mangiano con la forchetta.",
+      ),
+      say(
+        "On Sundays people have lunch with the family.",
+        "La domenica si pranza [con la|in] famiglia.",
+      ),
+    ],
+  },
+  {
+    id: "how-much-ne",
+    lesson: 8,
+    format: "dialogue",
+    title: "How much would you like?",
+    italian: "Quanto ne vuole?",
+    intro: "You're at the deli counter. Use ne when you give an amount.",
+    steps: [
+      cue(
+        "Salumiere",
+        "Buongiorno, desidera?",
+        "Good morning, what would you like?",
+      ),
+      say("I'd like some Parma ham.", "Vorrei del prosciutto (crudo)."),
+      cue("Salumiere", "Quanto ne vuole?", "How much would you like?"),
+      say(
+        "I'll take two hundred grams.",
+        "Ne prendo due etti.",
+        "200 g = due etti",
+      ),
+      cue(
+        "Salumiere",
+        "Ecco. Altro? Le olive?",
+        "Here you are. Anything else? Olives?",
+      ),
+      say("Yes, I'll take half a kilo.", "Sì, ne prendo mezzo chilo."),
+      cue("Salumiere", "Ha bisogno di uova?", "Do you need eggs?"),
+      say("Yes, I'd like six.", "Sì, ne vorrei sei."),
+      say("No, nothing else, thanks.", "No, nient'altro, grazie."),
     ],
   },
 ];

@@ -1,3 +1,4 @@
+import {lessonRange} from "../../../data/lessons";
 import {useSearchParams} from "react-router";
 import ChipToggle from "../../../components/ChipToggle";
 import PageHeader from "../../../components/PageHeader";
@@ -20,7 +21,7 @@ export default function WordsPage() {
       <PageHeader
         eyebrow="Nuovo Espresso 1"
         title="Practise words"
-        description="Vocabulary from lessons 1–8. Pick a lesson or a topic, look over the words, then test yourself."
+        description={`Vocabulary from lessons ${lessonRange}. Pick a lesson or a topic, look over the words, then test yourself.`}
         hideDescriptionOnMobile
       />
 

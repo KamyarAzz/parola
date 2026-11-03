@@ -206,6 +206,41 @@ export const grammarLessons1to4: GrammarPoint[] = [
       gap("Il mio ufficio è ___ via Garibaldi.", ["in", "a", "di", "su"]),
     ],
   },
+  {
+    id: "this-is",
+    lesson: 2,
+    category: "phrases",
+    title: "Introducing someone",
+    italian: "Questo è… / questa è…",
+    summary:
+      "questo è for a man, questa è for a woman. A friend of mine = un mio amico / una mia amica.",
+    examples: [
+      {
+        it: "Questo è Marco, un mio amico.",
+        en: "This is Marco, a friend of mine.",
+      },
+      {
+        it: "Questa è Anna, una mia collega.",
+        en: "This is Anna, a colleague of mine.",
+      },
+    ],
+    exercises: [
+      gap("___ è Giulia, una mia amica.", [
+        "Questa",
+        "Questo",
+        "Questi",
+        "Queste",
+      ]),
+      gap("___ è Paolo, un mio collega.", [
+        "Questo",
+        "Questa",
+        "Queste",
+        "Questi",
+      ]),
+      gap("Ti presento Luca, ___ mio amico.", ["un", "una", "il", "uno"]),
+      gap("Questa è Sara, ___ mia collega.", ["una", "un", "la", "uno"]),
+    ],
+  },
 
   // Lezione 3
   {
@@ -274,6 +309,49 @@ export const grammarLessons1to4: GrammarPoint[] = [
         "piacete",
         "piacere",
       ]),
+    ],
+  },
+  {
+    id: "me-too",
+    lesson: 4,
+    category: "pronouns",
+    title: "Me too, me neither",
+    italian: "A me, a te, a Lei",
+    summary:
+      "To agree or disagree about likes, use a me: anche a me (me too), neanche a me (me neither), a me sì / a me no.",
+    table: [
+      ["they say", "you agree", "you disagree"],
+      ["Mi piace il jazz.", "Anche a me.", "A me no."],
+      ["Non mi piace il jazz.", "Neanche a me.", "A me sì."],
+    ],
+    examples: [
+      {
+        it: "– Mi piace ballare. – Anche a me!",
+        en: "– I like dancing. – Me too!",
+      },
+      {it: "A te piace il calcio?", en: "Do you like football?"},
+    ],
+    exercises: [
+      gap("– Mi piace il cinema. – Anche ___ me!", ["a", "di", "per", "io"]),
+      gap("– Non mi piace il tè. – ___ a me.", [
+        "Neanche",
+        "Anche",
+        "Sì",
+        "Sempre",
+      ]),
+      gap("– Mi piacciono i gatti. – A me ___. (I don't)", [
+        "no",
+        "sì",
+        "neanche",
+        "anche",
+      ]),
+      gap("– Non mi piace sciare. – A me ___! (I do)", [
+        "sì",
+        "no",
+        "neanche",
+        "anche",
+      ]),
+      gap("Signora, a ___ piace l'opera?", ["Lei", "te", "me", "lui"]),
     ],
   },
   {

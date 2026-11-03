@@ -5,9 +5,14 @@ import type {
 } from "../../types";
 import {grammarLessons1to4} from "./lessons1to4";
 import {grammarLessons5to8} from "./lessons5to8";
+import {grammarLessons9to10} from "./lessons9to10";
 
-// Grammar from Nuovo Espresso 1, lessons 1–8, kept to short summaries.
-export const grammarPoints = [...grammarLessons1to4, ...grammarLessons5to8];
+// Grammar from Nuovo Espresso 1, lessons 1–10, kept to short summaries.
+export const grammarPoints = [
+  ...grammarLessons1to4,
+  ...grammarLessons5to8,
+  ...grammarLessons9to10,
+];
 
 export const grammarCategories: GrammarCategory[] = [
   {id: "articles", title: "Articles", italian: "Gli articoli"},

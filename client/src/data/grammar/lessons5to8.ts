@@ -90,6 +90,58 @@ export const grammarLessons5to8: GrammarPoint[] = [
       gap("Resto ___ 5 al 9 agosto.", ["dal", "il", "al", "nel"]),
     ],
   },
+  {
+    id: "ordinal-numbers",
+    lesson: 5,
+    category: "nouns",
+    title: "First, second, third",
+    italian: "I numeri ordinali",
+    summary:
+      "primo, secondo, terzo… decimo. They agree like adjectives: la prima volta, il terzo piano.",
+    table: [
+      ["1°", "primo", "6°", "sesto"],
+      ["2°", "secondo", "7°", "settimo"],
+      ["3°", "terzo", "8°", "ottavo"],
+      ["4°", "quarto", "9°", "nono"],
+      ["5°", "quinto", "10°", "decimo"],
+    ],
+    examples: [
+      {
+        it: "La camera è al terzo piano.",
+        en: "The room is on the third floor.",
+      },
+      {
+        it: "Gennaio è il primo mese dell'anno.",
+        en: "January is the first month of the year.",
+      },
+    ],
+    exercises: [
+      gap("La camera è al ___ piano. (3rd)", [
+        "terzo",
+        "tre",
+        "terza",
+        "terzio",
+      ]),
+      gap("È la ___ volta che vengo a Roma. (1st)", [
+        "prima",
+        "primo",
+        "una",
+        "uno",
+      ]),
+      gap("Marzo è il ___ mese dell'anno.", [
+        "terzo",
+        "quarto",
+        "secondo",
+        "tre",
+      ]),
+      gap("Abito al ___ piano. (5th)", [
+        "quinto",
+        "cinque",
+        "quinta",
+        "cinquesimo",
+      ]),
+    ],
+  },
 
   // Lezione 6
   {
@@ -193,6 +245,98 @@ export const grammarLessons5to8: GrammarPoint[] = [
         "interessanti",
         "interessanta",
       ]),
+    ],
+  },
+  {
+    id: "ci-there",
+    lesson: 6,
+    category: "pronouns",
+    title: "Ci: there",
+    italian: "Il ci locativo",
+    summary:
+      "ci replaces a place you've just named, so you don't repeat it. It goes before the verb: – Vai spesso al cinema? – Sì, ci vado ogni sabato.",
+    examples: [
+      {
+        it: "– Vai a Bologna? – Sì, ci vado domani.",
+        en: "– Are you going to Bologna? – Yes, I'm going there tomorrow.",
+      },
+    ],
+    exercises: [
+      gap("– Vai spesso in palestra? – Sì, ___ vado il lunedì.", [
+        "ci",
+        "la",
+        "ne",
+        "lo",
+      ]),
+      gap("– Quando vieni al corso? – ___ vengo domani.", [
+        "Ci",
+        "Lo",
+        "Ne",
+        "Mi",
+      ]),
+      gap("– Andate al mare? – No, non ___ andiamo.", ["ci", "lo", "ne", "vi"]),
+      gap("Firenze? ___ abito da tre anni.", ["Ci", "La", "Ne", "Li"]),
+    ],
+  },
+  {
+    id: "molto",
+    lesson: 6,
+    category: "nouns",
+    title: "Molto: very or a lot of",
+    italian: "Molto",
+    summary:
+      "Before an adjective or after a verb, molto means 'very' or 'a lot' and never changes. Before a noun it means 'a lot of' and agrees: molto traffico, molta gente, molti negozi, molte chiese.",
+    table: [
+      ["", "masc.", "fem."],
+      ["singular", "molto traffico", "molta gente"],
+      ["plural", "molti negozi", "molte chiese"],
+      ["+ adjective", "molto bello", "molto bella"],
+    ],
+    examples: [
+      {
+        it: "A Bologna ci sono molti musei.",
+        en: "In Bologna there are a lot of museums.",
+      },
+      {it: "La città è molto vivace.", en: "The city is very lively."},
+    ],
+    exercises: [
+      gap("A Bologna ci sono ___ negozi.", [
+        "molti",
+        "molto",
+        "molte",
+        "molta",
+      ]),
+      gap("In centro c'è ___ gente.", ["molta", "molto", "molte", "molti"]),
+      gap("Le piazze sono ___ belle.", ["molto", "molte", "molti", "molta"]),
+      gap("Ci sono ___ cose da vedere.", ["molte", "molto", "molti", "molta"]),
+      gap("Mi piace ___ questa città.", ["molto", "molta", "molti", "molte"]),
+    ],
+  },
+  {
+    id: "c-e-dov-e",
+    lesson: 6,
+    category: "phrases",
+    title: "Is there a…? Where is the…?",
+    italian: "C'è un…? / Dov'è il…?",
+    summary:
+      "c'è + un / una when you don't know if there is one: C'è una farmacia qui vicino? dov'è + il / la when you know it's there: Dov'è la stazione?",
+    examples: [
+      {
+        it: "Scusi, c'è una banca qui vicino?",
+        en: "Excuse me, is there a bank near here?",
+      },
+      {it: "Scusi, dov'è il Duomo?", en: "Excuse me, where is the cathedral?"},
+    ],
+    exercises: [
+      gap("Scusi, ___ una farmacia qui vicino?", [
+        "c'è",
+        "dov'è",
+        "è",
+        "ci sono",
+      ]),
+      gap("Scusi, ___ la stazione?", ["dov'è", "c'è", "ci sono", "dove sono"]),
+      gap("C'è ___ supermercato in questa via?", ["un", "il", "lo", "la"]),
+      gap("Dov'è ___ museo archeologico?", ["il", "un", "uno", "una"]),
     ],
   },
 
@@ -309,6 +453,108 @@ export const grammarLessons5to8: GrammarPoint[] = [
       ]),
     ],
   },
+  {
+    id: "absolute-superlative",
+    lesson: 7,
+    category: "nouns",
+    title: "Very: -issimo",
+    italian: "Il superlativo assoluto",
+    summary:
+      "molto bello = bellissimo: drop the last vowel and add -issimo / -issima / -issimi / -issime. Some adverbs do it too: tardissimo, benissimo.",
+    table: [
+      ["molto…", "-issimo"],
+      ["molto bello", "bellissimo"],
+      ["molto breve", "brevissimo"],
+      ["molto stanche", "stanchissime"],
+      ["molto tardi", "tardissimo"],
+    ],
+    examples: [
+      {
+        it: "Abbiamo fatto un giro bellissimo in barca.",
+        en: "We took a really beautiful boat trip.",
+      },
+      {
+        it: "Ho fatto colazione tardissimo.",
+        en: "I had breakfast really late.",
+      },
+    ],
+    exercises: [
+      gap("La spiaggia è ___. (molto bella)", [
+        "bellissima",
+        "bellissimo",
+        "bellisima",
+        "molto bellissima",
+      ]),
+      gap("Siamo ___. (molto stanchi)", [
+        "stanchissimi",
+        "stanchissime",
+        "stancissimi",
+        "stanchissimo",
+      ]),
+      gap("Il viaggio è stato ___. (molto lungo)", [
+        "lunghissimo",
+        "lunghissima",
+        "lungissimo",
+        "lunghisimo",
+      ]),
+      gap("Le vacanze sono state ___. (molto brevi)", [
+        "brevissime",
+        "brevissimi",
+        "brevissima",
+        "brevisime",
+      ]),
+      gap("Ieri sono tornato ___. (very late)", [
+        "tardissimo",
+        "tardissima",
+        "molto tardissimo",
+        "tardisimo",
+      ]),
+    ],
+  },
+  {
+    id: "qualche",
+    lesson: 7,
+    category: "articles",
+    title: "Some, a few: qualche",
+    italian: "Qualche",
+    summary:
+      "qualche means 'some' or 'a few' but always takes a singular noun: qualche nuvola (some clouds), qualche giorno (a few days).",
+    examples: [
+      {
+        it: "Al nord c'è qualche temporale.",
+        en: "In the north there are a few storms.",
+      },
+      {
+        it: "Sono stato al mare qualche giorno.",
+        en: "I spent a few days at the seaside.",
+      },
+    ],
+    exercises: [
+      gap("Domani c'è qualche ___. (clouds)", [
+        "nuvola",
+        "nuvole",
+        "nuvolo",
+        "nuvoli",
+      ]),
+      gap("Siamo rimasti a Napoli qualche ___. (days)", [
+        "giorno",
+        "giorni",
+        "giorna",
+        "giorne",
+      ]),
+      gap("Ho letto ___ libro in vacanza.", [
+        "qualche",
+        "qualchi",
+        "qualcuni",
+        "qualche dei",
+      ]),
+      gap(
+        "Al sud ___ qualche temporale.",
+        ["c'è", "ci sono", "sono", "ne"],
+        "qualche takes a singular noun, so the verb is singular too: c'è.",
+      ),
+    ],
+  },
 
   // Lezione 8
   {
@@ -383,6 +629,80 @@ export const grammarLessons5to8: GrammarPoint[] = [
       gap("La frutta? ___ prendo al mercato.", ["La", "Lo", "Le", "Li"]),
       gap("I pomodori? ___ metto nell'insalata.", ["Li", "Le", "Lo", "La"]),
       gap("Le mele? ___ mangio ogni giorno.", ["Le", "Li", "La", "Lo"]),
+    ],
+  },
+  {
+    id: "ne",
+    lesson: 8,
+    category: "pronouns",
+    title: "Ne: some of it, some of them",
+    italian: "Il pronome ne",
+    summary:
+      "With an amount, use ne instead of lo / la / li / le: – Quanto prosciutto vuole? – Ne prendo due etti. The amount comes after the verb.",
+    table: [
+      ["all of it", "an amount of it"],
+      ["Il pane? Lo prendo.", "Il pane? Ne prendo mezzo chilo."],
+      ["Le mele? Le compro io.", "Le mele? Ne compro un chilo."],
+      ["Le uova? Le voglio.", "Le uova? Ne voglio sei."],
+    ],
+    examples: [
+      {
+        it: "– Quante uova vuole? – Ne vorrei sei.",
+        en: "– How many eggs would you like? – I'd like six.",
+      },
+      {
+        it: "– Quanto ne vuole? – Due etti.",
+        en: "– How much would you like? – Two hundred grams.",
+      },
+    ],
+    exercises: [
+      gap("– Quanto prosciutto vuole? – ___ prendo due etti.", [
+        "Ne",
+        "Lo",
+        "La",
+        "Li",
+      ]),
+      gap("– Quante mele compri? – ___ compro un chilo.", [
+        "Ne",
+        "Le",
+        "Li",
+        "La",
+      ]),
+      gap("– Le mele? – ___ prendo tutte io.", ["Le", "Ne", "Li", "La"]),
+      gap("Signora, quanto ___ vuole?", ["ne", "lo", "ci", "la"]),
+      gap("– Hai delle uova? – Sì, ___ ho sei.", ["ne", "le", "li", "ci"]),
+    ],
+  },
+  {
+    id: "impersonal-si",
+    lesson: 8,
+    category: "pronouns",
+    title: "Si: people in general",
+    italian: "Il si impersonale",
+    summary:
+      "si + lui / lei form means 'people', 'you' or 'one': in Italia si mangia tardi. With a plural noun the verb is plural: si mangiano gli spaghetti.",
+    examples: [
+      {it: "In Italia si cena tardi.", en: "In Italy people have dinner late."},
+      {
+        it: "Gli spaghetti si mangiano con la forchetta.",
+        en: "You eat spaghetti with a fork.",
+      },
+    ],
+    exercises: [
+      gap("In Italia ___ mangia molta pasta.", ["si", "ci", "mi", "ne"]),
+      gap("Dopo pranzo si ___ un caffè. (prendere)", [
+        "prende",
+        "prendono",
+        "prendiamo",
+        "prendere",
+      ]),
+      gap("Gli spaghetti si ___ con la forchetta. (mangiare)", [
+        "mangiano",
+        "mangia",
+        "mangiamo",
+        "mangiate",
+      ]),
+      gap("Come ___ dice 'thank you' in italiano?", ["si", "ci", "ti", "lo"]),
     ],
   },
 ];

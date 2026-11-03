@@ -1,3 +1,4 @@
+import {lessonRange} from "../data/lessons";
 import {grammarCategories, grammarPoints} from "../data/grammar";
 import type {ChoiceQuestion, GrammarGroup, GrammarGrouping} from "../types";
 import {
@@ -9,7 +10,7 @@ import {
 
 export const allGrammarGroup: GrammarGroup = {
   id: "grammar-all",
-  label: "Lezioni 1–8",
+  label: `Lezioni ${lessonRange}`,
   title: "All grammar",
   description: "Every grammar point from the lessons you've studied",
   items: grammarPoints,

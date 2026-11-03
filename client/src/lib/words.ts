@@ -1,3 +1,4 @@
+import {lessonRange} from "../data/lessons";
 import {words, wordTopics} from "../data/words";
 import type {Word, WordGroup, WordGrouping, WordQuestion} from "../types";
 import {
@@ -10,7 +11,7 @@ import {
 
 export const allWordsGroup: WordGroup = {
   id: "words-all",
-  label: "Lezioni 1–8",
+  label: `Lezioni ${lessonRange}`,
   title: "All words",
   description: "Every word from the lessons you've studied",
   items: words,

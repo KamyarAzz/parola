@@ -1,6 +1,6 @@
 # Parola
 
-Learn Italian with Nuovo Espresso 1 (lessons 1–8): practise the words, verbs,
+Learn Italian with Nuovo Espresso 1 (lessons 1–10): practise the words, verbs,
 grammar and sentences of each lesson, and see exactly what to work on next.
 
 > Status: the client is complete and works offline as an installable app.
@@ -8,8 +8,8 @@ grammar and sentences of each lesson, and see exactly what to work on next.
 
 ## Features
 
-- **Words**: 265 words from lessons 1–8, by lesson or topic, with audio
-- **Verbs**: 43 verbs with all six present-tense forms, by lesson or type
+- **Words**: 339 words from lessons 1–10, by lesson or topic, with audio
+- **Verbs**: 63 verbs (reflexive ones too) with all six present-tense forms, by lesson or type
 - **Grammar**: short summaries with tables, examples and fill-the-gap tests
 - **Sentences**: dialogues, short texts and drills, plus endless generated
   sentences; type the Italian or use drag-and-drop word tiles, with

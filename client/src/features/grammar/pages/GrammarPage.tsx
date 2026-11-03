@@ -1,3 +1,4 @@
+import {lessonRange} from "../../../data/lessons";
 import {useSearchParams} from "react-router";
 import ChipToggle from "../../../components/ChipToggle";
 import PageHeader from "../../../components/PageHeader";
@@ -20,7 +21,7 @@ export default function GrammarPage() {
       <PageHeader
         eyebrow="Nuovo Espresso 1"
         title="Practise grammar"
-        description="The grammar from lessons 1–8 in short summaries. Read the rule, then test yourself."
+        description={`The grammar from lessons ${lessonRange} in short summaries. Read the rule, then test yourself.`}
         hideDescriptionOnMobile
       />
 

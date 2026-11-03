@@ -11,7 +11,9 @@ export type WordTopicId =
   | "hotel"
   | "city"
   | "holidays"
-  | "shopping";
+  | "shopping"
+  | "routine"
+  | "family";
 
 export interface Word extends LessonItem {
   it: string;

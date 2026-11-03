@@ -1,3 +1,4 @@
+import {lessonRange} from "../../data/lessons";
 import type {
   FreshSentenceGroup,
   GeneratedLine,
@@ -11,12 +12,14 @@ import {lessons1to2} from "./templates/lessons1to2";
 import {lessons3to4} from "./templates/lessons3to4";
 import {lessons5to6} from "./templates/lessons5to6";
 import {lessons7to8} from "./templates/lessons7to8";
+import {lessons9to10} from "./templates/lessons9to10";
 
 export const sentenceTemplates = [
   ...lessons1to2,
   ...lessons3to4,
   ...lessons5to6,
   ...lessons7to8,
+  ...lessons9to10,
 ];
 
 const byLesson: FreshSentenceGroup[] = lessonSets(
@@ -26,7 +29,7 @@ const byLesson: FreshSentenceGroup[] = lessonSets(
 
 export const allFreshGroup: FreshSentenceGroup = {
   id: "sentences-fresh-all",
-  label: "Lezioni 1–8",
+  label: `Lezioni ${lessonRange}`,
   title: "Fresh sentences",
   description: "New sentences every time, from everything you've studied",
   items: sentenceTemplates,

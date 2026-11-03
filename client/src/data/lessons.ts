@@ -42,4 +42,17 @@ export const lessons: Lesson[] = [
     title: "Fare la spesa",
     summary: "Groceries, quantities and shopping for food",
   },
+  {
+    number: 9,
+    title: "Vita quotidiana",
+    summary: "Your daily routine, how often you do things, wishes for holidays",
+  },
+  {
+    number: 10,
+    title: "La famiglia",
+    summary: "Family members, what's whose, what you did last weekend",
+  },
 ];
+
+/** "1–10": the lessons the app covers, for labels. */
+export const lessonRange = `${lessons[0].number}–${lessons[lessons.length - 1].number}`;
