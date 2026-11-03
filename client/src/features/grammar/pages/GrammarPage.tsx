@@ -1,20 +1,22 @@
-import {lessonRange} from "../../../data/lessons";
 import {useSearchParams} from "react-router";
-import ChipToggle from "../../../components/ChipToggle";
 import PageHeader from "../../../components/PageHeader";
+import SearchInput from "../../../components/search/SearchInput";
 import MixBanner from "../../../components/study/MixBanner";
-import StudySetGrid from "../../../components/study/StudySetGrid";
-import {grammarGroupings} from "../../../data/grammar";
-import {allGrammarGroup, grammarGroups} from "../../../lib/grammar";
-import type {GrammarGrouping, GrammarPoint} from "../../../types";
-
-const previewOf = (point: GrammarPoint) => point.italian;
+import {lessonRange} from "../../../data/lessons";
+import {allGrammarGroup} from "../../../lib/grammar";
+import {withParam} from "../../../lib/urlParams";
+import type {GrammarGrouping} from "../../../types";
+import GrammarSearchResults from "../components/search/GrammarSearchResults";
+import GrammarSets from "../components/sets/GrammarSets";
 
 export default function GrammarPage() {
   // Kept in the URL so going back from a set keeps the same view
   const [params, setParams] = useSearchParams();
   const grouping: GrammarGrouping =
     params.get("by") === "category" ? "category" : "lesson";
+  const query = params.get("q") ?? "";
+  const update = (key: string, value: string) =>
+    setParams((prev) => withParam(prev, key, value), {replace: true});
 
   return (
     <div className="flex flex-col gap-6 md:gap-8">
@@ -23,29 +25,26 @@ export default function GrammarPage() {
         title="Practise grammar"
         description={`The grammar from lessons ${lessonRange} in short summaries. Read the rule, then test yourself.`}
         hideDescriptionOnMobile
-      />
-
-      <MixBanner set={allGrammarGroup} noun="topics" />
-
-      <section aria-labelledby="sets-heading" className="flex flex-col gap-4">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <h2 id="sets-heading" className="text-lg font-semibold md:text-xl">
-            Grammar sets
-          </h2>
-          <ChipToggle
-            label="Group grammar"
-            options={grammarGroupings}
-            value={grouping}
-            onChange={(by) => setParams({by}, {replace: true})}
-          />
-        </div>
-        <StudySetGrid
-          sets={grammarGroups(grouping)}
-          basePath="/grammar"
-          noun="topics"
-          previewOf={previewOf}
+      >
+        <SearchInput
+          label="Search grammar"
+          placeholder="Search rules, e.g. passato, ne"
+          value={query}
+          onChange={(q) => update("q", q)}
         />
-      </section>
+      </PageHeader>
+
+      {query.trim() ? (
+        <GrammarSearchResults query={query} />
+      ) : (
+        <>
+          <MixBanner set={allGrammarGroup} noun="topics" />
+          <GrammarSets
+            grouping={grouping}
+            onGroupingChange={(by) => update("by", by)}
+          />
+        </>
+      )}
     </div>
   );
 }

@@ -7,6 +7,7 @@ import {
   lessonSets,
   shuffle,
 } from "./studySets";
+import {search} from "./search";
 
 export const allGrammarGroup: GrammarGroup = {
   id: "grammar-all",
@@ -27,6 +28,16 @@ const byCategory = categorySets(
 export function grammarGroups(grouping: GrammarGrouping) {
   return [allGrammarGroup, ...(grouping === "lesson" ? byLesson : byCategory)];
 }
+
+/** Grammar points whose title, rule, examples or table match the query. */
+export const searchGrammar = (query: string) =>
+  search(grammarPoints, query, (p) => [
+    p.title,
+    p.italian,
+    p.summary,
+    ...p.examples.flatMap((e) => [e.it, e.en]),
+    ...(p.table?.flat() ?? []),
+  ]);
 
 export function getGrammarGroup(id: string | undefined) {
   if (id === allGrammarGroup.id) return allGrammarGroup;

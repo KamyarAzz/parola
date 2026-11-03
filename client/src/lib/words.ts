@@ -8,6 +8,7 @@ import {
   lessonSets,
   shuffle,
 } from "./studySets";
+import {search} from "./search";
 
 export const allWordsGroup: WordGroup = {
   id: "words-all",
@@ -23,6 +24,10 @@ const byTopic = categorySets("words-topic", wordTopics, words, (w) => w.topic);
 export function wordGroups(grouping: WordGrouping) {
   return [allWordsGroup, ...(grouping === "lesson" ? byLesson : byTopic)];
 }
+
+/** Words whose Italian or English matches the query. */
+export const searchWords = (query: string) =>
+  search(words, query, (w) => [w.it, w.en]);
 
 export function getWordGroup(id: string | undefined) {
   if (id === allWordsGroup.id) return allWordsGroup;
