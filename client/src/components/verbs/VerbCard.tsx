@@ -1,6 +1,6 @@
-import SpeakButton from "../../../../components/SpeakButton";
-import {presentForms, verbTypeTag} from "../../../../lib/verbs";
-import type {Verb} from "../../../../types";
+import SpeakButton from "../../components/SpeakButton";
+import {presentForms, verbTypeTag} from "../../lib/verbs";
+import type {Verb} from "../../types";
 import ConjugationTable from "./ConjugationTable";
 
 interface VerbCardProps {

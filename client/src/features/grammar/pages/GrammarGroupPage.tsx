@@ -1,7 +1,7 @@
 import {Navigate, useParams} from "react-router";
 import StudySetHeader from "../../../components/study/StudySetHeader";
 import {getGrammarGroup} from "../../../lib/grammar";
-import GrammarPointList from "../components/point-list/GrammarPointList";
+import GrammarPointList from "../../../components/grammar/GrammarPointList";
 
 /** One lesson or area: read the summaries, then start a test. */
 export default function GrammarGroupPage() {

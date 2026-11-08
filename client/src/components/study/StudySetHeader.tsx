@@ -1,7 +1,8 @@
-import {ArrowLeft, Play} from "lucide-react";
+import {Play} from "lucide-react";
 import {Link} from "react-router";
 import {setDescription} from "../../lib/studySets";
 import type {LessonItem, StudySet} from "../../types";
+import BackLink from "../BackLink";
 import {buttonClass} from "../button";
 import PageHeader from "../PageHeader";
 
@@ -21,13 +22,7 @@ export default function StudySetHeader<T extends LessonItem>({
 }: StudySetHeaderProps<T>) {
   return (
     <div className="flex flex-col gap-4">
-      <Link
-        to={backTo}
-        className="-ml-2 flex min-h-11 w-fit items-center gap-1.5 rounded-[10px] px-2 text-sm font-medium text-muted hover:bg-surface hover:text-ink"
-      >
-        <ArrowLeft aria-hidden size={18} />
-        All sets
-      </Link>
+      <BackLink to={backTo}>All sets</BackLink>
       <PageHeader
         eyebrow={set.label}
         eyebrowLang="it"

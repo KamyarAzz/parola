@@ -1,4 +1,4 @@
-import type {GrammarExample} from "../../../../types";
+import type {GrammarExample} from "../../types";
 
 interface ExampleLineProps {
   example: GrammarExample;

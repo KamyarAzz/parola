@@ -13,6 +13,7 @@ export const grammarLessons5to8: GrammarPoint[] = [
     examples: [
       {it: "In camera c'è il frigobar.", en: "There's a minibar in the room."},
       {it: "Non ci sono asciugamani.", en: "There are no towels."},
+      {it: "In albergo c'è una piscina.", en: "There's a pool in the hotel."},
     ],
     exercises: [
       gap("In camera ___ un frigobar.", ["c'è", "ci sono", "è", "sono"]),
@@ -43,7 +44,15 @@ export const grammarLessons5to8: GrammarPoint[] = [
       ["voi", "potete", "dovete", "volete"],
       ["loro", "possono", "devono", "vogliono"],
     ],
-    examples: [{it: "Posso pagare con la carta?", en: "Can I pay by card?"}],
+    examples: [
+      {it: "Posso pagare con la carta?", en: "Can I pay by card?"},
+      {
+        it: "Domani devo partire presto.",
+        en: "Tomorrow I have to leave early.",
+      },
+      {it: "Vogliamo una camera doppia.", en: "We want a double room."},
+      {it: "Puoi ripetere, per favore?", en: "Can you repeat that, please?"},
+    ],
     exercises: [
       gap("___ prenotare una camera? (can I)", [
         "Posso",
@@ -82,6 +91,7 @@ export const grammarLessons5to8: GrammarPoint[] = [
     examples: [
       {it: "Arrivo il 10 giugno.", en: "I arrive on 10 June."},
       {it: "Dal 3 al 6 maggio.", en: "From 3 to 6 May."},
+      {it: "Il primo maggio è festa.", en: "The 1st of May is a holiday."},
     ],
     exercises: [
       gap("Oggi è ___ 3 maggio.", ["il", "lo", "la", "al"]),
@@ -113,6 +123,10 @@ export const grammarLessons5to8: GrammarPoint[] = [
       {
         it: "Gennaio è il primo mese dell'anno.",
         en: "January is the first month of the year.",
+      },
+      {
+        it: "È la prima volta che vengo in Italia.",
+        en: "It's the first time I've come to Italy.",
       },
     ],
     exercises: [
@@ -165,6 +179,12 @@ export const grammarLessons5to8: GrammarPoint[] = [
         it: "La farmacia è vicino alla stazione.",
         en: "The pharmacy is near the station.",
       },
+      {it: "Stasera vado al cinema.", en: "Tonight I'm going to the cinema."},
+      {it: "Il libro è sul tavolo.", en: "The book is on the table."},
+      {
+        it: "Torno dall'ufficio alle sei.",
+        en: "I come back from the office at six.",
+      },
     ],
     exercises: [
       gap("La farmacia è vicino ___ stazione.", [
@@ -189,6 +209,18 @@ export const grammarLessons5to8: GrammarPoint[] = [
       {
         it: "La banca è accanto alla posta.",
         en: "The bank is next to the post office.",
+      },
+      {
+        it: "Il parco è lontano dal centro.",
+        en: "The park is far from the centre.",
+      },
+      {
+        it: "Il bar è di fronte al museo.",
+        en: "The bar is opposite the museum.",
+      },
+      {
+        it: "La chiesa è tra la banca e il teatro.",
+        en: "The church is between the bank and the theatre.",
       },
     ],
     exercises: [
@@ -219,6 +251,15 @@ export const grammarLessons5to8: GrammarPoint[] = [
     ],
     examples: [
       {it: "Verona è una città tranquilla.", en: "Verona is a quiet city."},
+      {
+        it: "A Roma ci sono molti palazzi antichi.",
+        en: "In Rome there are lots of old buildings.",
+      },
+      {
+        it: "Le piazze sono grandi e belle.",
+        en: "The squares are big and beautiful.",
+      },
+      {it: "È un ristorante elegante.", en: "It's an elegant restaurant."},
     ],
     exercises: [
       gap("Roma è una città ___. (antico)", [
@@ -260,6 +301,14 @@ export const grammarLessons5to8: GrammarPoint[] = [
         it: "– Vai a Bologna? – Sì, ci vado domani.",
         en: "– Are you going to Bologna? – Yes, I'm going there tomorrow.",
       },
+      {
+        it: "Roma è bellissima, ci torno ogni anno.",
+        en: "Rome is beautiful, I go back there every year.",
+      },
+      {
+        it: "– Andate spesso al mare? – No, non ci andiamo mai.",
+        en: "– Do you often go to the seaside? – No, we never go there.",
+      },
     ],
     exercises: [
       gap("– Vai spesso in palestra? – Sì, ___ vado il lunedì.", [
@@ -298,6 +347,7 @@ export const grammarLessons5to8: GrammarPoint[] = [
         en: "In Bologna there are a lot of museums.",
       },
       {it: "La città è molto vivace.", en: "The city is very lively."},
+      {it: "Mi piace molto questa città.", en: "I like this city a lot."},
     ],
     exercises: [
       gap("A Bologna ci sono ___ negozi.", [
@@ -326,6 +376,10 @@ export const grammarLessons5to8: GrammarPoint[] = [
         en: "Excuse me, is there a bank near here?",
       },
       {it: "Scusi, dov'è il Duomo?", en: "Excuse me, where is the cathedral?"},
+      {
+        it: "C'è un supermercato in questa via?",
+        en: "Is there a supermarket in this street?",
+      },
     ],
     exercises: [
       gap("Scusi, ___ una farmacia qui vicino?", [
@@ -363,6 +417,12 @@ export const grammarLessons5to8: GrammarPoint[] = [
         it: "Ieri ho lavorato fino alle sette.",
         en: "Yesterday I worked until seven.",
       },
+      {it: "Hai mangiato bene?", en: "Did you eat well?"},
+      {
+        it: "Sabato abbiamo visitato un museo.",
+        en: "On Saturday we visited a museum.",
+      },
+      {it: "Marco ha dormito fino a tardi.", en: "Marco slept late."},
     ],
     exercises: [
       gap("Ieri ___ mangiato la pizza.", ["ho", "sono", "hai", "abbiamo"]),
@@ -398,7 +458,12 @@ export const grammarLessons5to8: GrammarPoint[] = [
       ["voi", "siete andati / andate"],
       ["loro", "sono andati / andate"],
     ],
-    examples: [{it: "Anna è partita ieri.", en: "Anna left yesterday."}],
+    examples: [
+      {it: "Anna è partita ieri.", en: "Anna left yesterday."},
+      {it: "Marco è andato al mare.", en: "Marco went to the seaside."},
+      {it: "Siamo arrivati alle otto.", en: "We arrived at eight."},
+      {it: "Le ragazze sono tornate tardi.", en: "The girls came back late."},
+    ],
     exercises: [
       gap("Anna è ___ a Roma.", ["andata", "andato", "andati", "andare"]),
       gap("Noi ___ partiti alle otto.", ["siamo", "abbiamo", "sono", "siete"]),
@@ -434,6 +499,12 @@ export const grammarLessons5to8: GrammarPoint[] = [
       {
         it: "Ho preso il treno delle otto.",
         en: "I took the eight o'clock train.",
+      },
+      {it: "Hai visto il film?", en: "Did you see the film?"},
+      {it: "Cosa avete fatto ieri?", en: "What did you do yesterday?"},
+      {
+        it: "Ho letto un libro e ho scritto una mail.",
+        en: "I read a book and wrote an email.",
       },
     ],
     exercises: [
@@ -477,6 +548,7 @@ export const grammarLessons5to8: GrammarPoint[] = [
         it: "Ho fatto colazione tardissimo.",
         en: "I had breakfast really late.",
       },
+      {it: "La spiaggia è bellissima.", en: "The beach is really beautiful."},
     ],
     exercises: [
       gap("La spiaggia è ___. (molto bella)", [
@@ -528,6 +600,7 @@ export const grammarLessons5to8: GrammarPoint[] = [
         it: "Sono stato al mare qualche giorno.",
         en: "I spent a few days at the seaside.",
       },
+      {it: "Ho comprato qualche libro.", en: "I bought a few books."},
     ],
     exercises: [
       gap("Domani c'è qualche ___. (clouds)", [
@@ -570,6 +643,14 @@ export const grammarLessons5to8: GrammarPoint[] = [
         it: "Vorrei del pane e delle uova.",
         en: "I'd like some bread and some eggs.",
       },
+      {
+        it: "Compro dello zucchero e dell'olio.",
+        en: "I'm buying some sugar and some oil.",
+      },
+      {
+        it: "Ci sono dei pomodori in frigo.",
+        en: "There are some tomatoes in the fridge.",
+      },
     ],
     exercises: [
       gap("Vorrei ___ pane.", ["del", "dello", "della", "dei"]),
@@ -592,6 +673,7 @@ export const grammarLessons5to8: GrammarPoint[] = [
         en: "200 grams of ham, please.",
       },
       {it: "Una bottiglia di vino rosso.", en: "A bottle of red wine."},
+      {it: "Un chilo di mele, per favore.", en: "A kilo of apples, please."},
     ],
     exercises: [
       gap("Un chilo ___ mele, per favore.", ["di", "delle", "da", "a"]),
@@ -623,6 +705,15 @@ export const grammarLessons5to8: GrammarPoint[] = [
         it: "La frutta? La prendo al mercato.",
         en: "The fruit? I get it at the market.",
       },
+      {it: "Il vino? Lo compro io.", en: "The wine? I'll buy it."},
+      {
+        it: "I pomodori? Li metto nell'insalata.",
+        en: "The tomatoes? I put them in the salad.",
+      },
+      {
+        it: "Le mele? Le mangio ogni giorno.",
+        en: "Apples? I eat them every day.",
+      },
     ],
     exercises: [
       gap("Il pane? ___ compro io.", ["Lo", "La", "Li", "Le"]),
@@ -653,6 +744,10 @@ export const grammarLessons5to8: GrammarPoint[] = [
       {
         it: "– Quanto ne vuole? – Due etti.",
         en: "– How much would you like? – Two hundred grams.",
+      },
+      {
+        it: "Il pane? Ne prendo mezzo chilo.",
+        en: "The bread? I'll take half a kilo (of it).",
       },
     ],
     exercises: [
@@ -686,6 +781,10 @@ export const grammarLessons5to8: GrammarPoint[] = [
       {
         it: "Gli spaghetti si mangiano con la forchetta.",
         en: "You eat spaghetti with a fork.",
+      },
+      {
+        it: "Dopo pranzo si prende un caffè.",
+        en: "After lunch people have a coffee.",
       },
     ],
     exercises: [

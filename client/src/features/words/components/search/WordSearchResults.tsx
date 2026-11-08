@@ -1,6 +1,6 @@
 import SearchResults from "../../../../components/search/SearchResults";
 import {searchWords} from "../../../../lib/words";
-import WordList from "../word-list/WordList";
+import WordList from "../../../../components/words/WordList";
 
 interface WordSearchResultsProps {
   query: string;

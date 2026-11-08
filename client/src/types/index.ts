@@ -1,6 +1,7 @@
 // Import types from "types", not from the files below.
 export type * from "./generator";
 export type * from "./grammar";
+export type * from "./lessons";
 export type * from "./practice";
 export type * from "./progress";
 export type * from "./results";

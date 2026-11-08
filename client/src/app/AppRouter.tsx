@@ -1,5 +1,7 @@
 import {createBrowserRouter} from "react-router";
 import HomePage from "../features/home/pages/HomePage";
+import LessonPage from "../features/lessons/pages/LessonPage";
+import LessonsPage from "../features/lessons/pages/LessonsPage";
 import GrammarGroupPage from "../features/grammar/pages/GrammarGroupPage";
 import GrammarPage from "../features/grammar/pages/GrammarPage";
 import PracticePage from "../features/practice/pages/PracticePage";
@@ -18,6 +20,8 @@ export const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       {path: "/", element: <HomePage />},
+      {path: "/lessons", element: <LessonsPage />},
+      {path: "/lessons/:lessonNumber", element: <LessonPage />},
       {path: "/words", element: <WordsPage />},
       {path: "/words/:groupId", element: <WordGroupPage />},
       {path: "/verbs", element: <VerbsPage />},

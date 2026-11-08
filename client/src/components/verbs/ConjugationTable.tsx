@@ -1,4 +1,4 @@
-import {pronouns} from "../../../../data/verbs";
+import {pronouns} from "../../data/verbs";
 import ConjugationRow from "./ConjugationRow";
 
 interface ConjugationTableProps {

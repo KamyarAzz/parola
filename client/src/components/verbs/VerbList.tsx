@@ -1,4 +1,4 @@
-import type {Verb} from "../../../../types";
+import type {Verb} from "../../types";
 import VerbCard from "./VerbCard";
 
 interface VerbListProps {

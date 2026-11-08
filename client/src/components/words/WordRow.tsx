@@ -1,5 +1,5 @@
-import SpeakButton from "../../../../components/SpeakButton";
-import type {Word} from "../../../../types";
+import SpeakButton from "../../components/SpeakButton";
+import type {Word} from "../../types";
 
 interface WordRowProps {
   word: Word;

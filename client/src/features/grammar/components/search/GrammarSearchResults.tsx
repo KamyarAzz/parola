@@ -1,6 +1,6 @@
 import SearchResults from "../../../../components/search/SearchResults";
 import {searchGrammar} from "../../../../lib/grammar";
-import GrammarPointList from "../point-list/GrammarPointList";
+import GrammarPointList from "../../../../components/grammar/GrammarPointList";
 
 interface GrammarSearchResultsProps {
   query: string;

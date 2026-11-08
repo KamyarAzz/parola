@@ -1,7 +1,7 @@
 import {Navigate, useParams} from "react-router";
 import StudySetHeader from "../../../components/study/StudySetHeader";
 import {getWordGroup} from "../../../lib/words";
-import WordList from "../components/word-list/WordList";
+import WordList from "../../../components/words/WordList";
 
 /** One lesson or topic: look over the words, then start a test. */
 export default function WordGroupPage() {

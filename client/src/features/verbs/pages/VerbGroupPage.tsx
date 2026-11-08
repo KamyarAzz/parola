@@ -1,7 +1,7 @@
 import {Navigate, useParams} from "react-router";
 import StudySetHeader from "../../../components/study/StudySetHeader";
 import {getVerbGroup} from "../../../lib/verbs";
-import VerbList from "../components/verb-list/VerbList";
+import VerbList from "../../../components/verbs/VerbList";
 
 /** One lesson or verb type: look over the forms, then start a test. */
 export default function VerbGroupPage() {

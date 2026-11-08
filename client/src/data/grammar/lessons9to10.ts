@@ -29,6 +29,14 @@ export const grammarLessons9to10: GrammarPoint[] = [
         it: "Il fine settimana voglio riposarmi.",
         en: "At the weekend I want to rest.",
       },
+      {
+        it: "Anna si sveglia alle sei e si veste.",
+        en: "Anna wakes up at six and gets dressed.",
+      },
+      {
+        it: "Ci divertiamo molto alle feste.",
+        en: "We have a lot of fun at parties.",
+      },
     ],
     exercises: [
       gap("La mattina ___ alzo alle sette.", ["mi", "ti", "si", "ci"]),
@@ -72,6 +80,10 @@ export const grammarLessons9to10: GrammarPoint[] = [
         en: "Normally I get up early.",
       },
       {it: "Luca cucina bene.", en: "Luca cooks well."},
+      {
+        it: "Parlo tranquillamente con tutti.",
+        en: "I talk calmly with everyone.",
+      },
     ],
     exercises: [
       gap("Vado ___ in palestra. (regolare)", [
@@ -112,6 +124,10 @@ export const grammarLessons9to10: GrammarPoint[] = [
       {
         it: "Prima mi faccio la doccia, poi faccio colazione.",
         en: "First I have a shower, then I have breakfast.",
+      },
+      {
+        it: "Bevo un caffè tre volte al giorno.",
+        en: "I drink coffee three times a day.",
       },
     ],
     exercises: [
@@ -155,7 +171,17 @@ export const grammarLessons9to10: GrammarPoint[] = [
       ["exam, interview", "In bocca al lupo! – Crepi!"],
       ["wedding, new job", "Congratulazioni!"],
     ],
-    examples: [{it: "Tanti auguri, Giulia!", en: "Happy birthday, Giulia!"}],
+    examples: [
+      {it: "Tanti auguri, Giulia!", en: "Happy birthday, Giulia!"},
+      {
+        it: "Buon Natale e buon anno!",
+        en: "Merry Christmas and happy New Year!",
+      },
+      {
+        it: "– Domani ho un esame. – In bocca al lupo! – Crepi!",
+        en: "– I have an exam tomorrow. – Good luck! – Thanks!",
+      },
+    ],
     exercises: [
       gap("___ compleanno!", ["Buon", "Buona", "Buone", "Buono"]),
       gap("___ Pasqua a tutti!", ["Buona", "Buon", "Buone", "Buoni"]),
@@ -190,6 +216,7 @@ export const grammarLessons9to10: GrammarPoint[] = [
     examples: [
       {it: "Paolo e la sua ragazza.", en: "Paolo and his girlfriend."},
       {it: "Anna e il suo ragazzo.", en: "Anna and her boyfriend."},
+      {it: "La nostra casa è in centro.", en: "Our house is in the centre."},
     ],
     exercises: [
       gap("Ecco ___ casa. (my)", ["la mia", "il mio", "mia", "le mie"]),
@@ -239,6 +266,12 @@ export const grammarLessons9to10: GrammarPoint[] = [
         it: "Mia sorella vive a Roma con i suoi figli.",
         en: "My sister lives in Rome with her children.",
       },
+      {
+        it: "I miei genitori abitano a Napoli.",
+        en: "My parents live in Naples.",
+      },
+      {it: "Come si chiama tuo padre?", en: "What's your father's name?"},
+      {it: "La loro figlia è medico.", en: "Their daughter is a doctor."},
     ],
     exercises: [
       gap("___ madre è insegnante. (my)", ["Mia", "La mia", "Il mio", "Mio"]),
@@ -290,6 +323,14 @@ export const grammarLessons9to10: GrammarPoint[] = [
         it: "Mio fratello si è sposato a giugno.",
         en: "My brother got married in June.",
       },
+      {
+        it: "Stamattina mi sono alzata alle sei.",
+        en: "This morning I (f) got up at six.",
+      },
+      {
+        it: "Vi siete divertiti alla festa?",
+        en: "Did you have fun at the party?",
+      },
     ],
     exercises: [
       gap("Stamattina mi ___ alzato tardi.", ["sono", "ho", "è", "sei"]),
@@ -330,6 +371,10 @@ export const grammarLessons9to10: GrammarPoint[] = [
       {
         it: "Roma è la città più grande d'Italia.",
         en: "Rome is the biggest city in Italy.",
+      },
+      {
+        it: "Mia nonna è la più anziana della famiglia.",
+        en: "My grandmother is the oldest in the family.",
       },
     ],
     exercises: [
@@ -375,6 +420,10 @@ export const grammarLessons9to10: GrammarPoint[] = [
       {
         it: "Quando vieni a trovarci?",
         en: "When are you coming to see us?",
+      },
+      {
+        it: "A Firenze abbiamo visitato gli Uffizi.",
+        en: "In Florence we visited the Uffizi (a place: visitare).",
       },
     ],
     exercises: [

@@ -23,6 +23,11 @@ export const grammarLessons1to4: GrammarPoint[] = [
     examples: [
       {it: "Ciao Marco, come stai?", en: "Hi Marco, how are you?"},
       {it: "Buongiorno signora, come sta?", en: "Good morning, how are you?"},
+      {it: "Io sono di Milano, e tu?", en: "I'm from Milan, and you?"},
+      {
+        it: "Noi siamo studenti, loro sono insegnanti.",
+        en: "We're students, they're teachers.",
+      },
     ],
     exercises: [
       gap("Ciao Luca, come ___?", ["stai", "sta", "state", "sto"]),
@@ -45,6 +50,7 @@ export const grammarLessons1to4: GrammarPoint[] = [
     examples: [
       {it: "Non sono francese.", en: "I'm not French."},
       {it: "No, non parlo tedesco.", en: "No, I don't speak German."},
+      {it: "Marco non è a casa.", en: "Marco isn't at home."},
     ],
     exercises: [
       gap("Io ___ parlo inglese.", ["non", "no", "nessun", "né"]),
@@ -69,6 +75,11 @@ export const grammarLessons1to4: GrammarPoint[] = [
     examples: [
       {it: "Maria è italiana.", en: "Maria is Italian."},
       {it: "John e Kate sono inglesi.", en: "John and Kate are English."},
+      {
+        it: "Juan è spagnolo, Carmen è spagnola.",
+        en: "Juan is Spanish, Carmen is Spanish.",
+      },
+      {it: "Hans e Greta sono tedeschi.", en: "Hans and Greta are German."},
     ],
     exercises: [
       gap("Maria è ___.", ["italiana", "italiano", "italiani", "italiane"]),
@@ -100,6 +111,8 @@ export const grammarLessons1to4: GrammarPoint[] = [
         en: "The bill and the beers, please.",
       },
       {it: "Gli studenti sono in classe.", en: "The students are in class."},
+      {it: "Lo zaino è sul tavolo.", en: "The backpack is on the table."},
+      {it: "L'amica di Anna è simpatica.", en: "Anna's friend is nice."},
     ],
     exercises: [
       gap("___ conto, per favore.", ["Il", "Lo", "La", "L'"]),
@@ -132,6 +145,10 @@ export const grammarLessons1to4: GrammarPoint[] = [
         en: "I have a (male) friend and a (female) friend in Rome.",
       },
       {it: "Marco è uno studente.", en: "Marco is a student."},
+      {
+        it: "Vorrei una pizza e un'aranciata.",
+        en: "I'd like a pizza and an orange soda.",
+      },
     ],
     exercises: [
       gap("Lavoro in ___ ufficio.", ["un", "uno", "una", "un'"]),
@@ -164,6 +181,15 @@ export const grammarLessons1to4: GrammarPoint[] = [
       {
         it: "Abito a Roma e lavoro in banca.",
         en: "I live in Rome and work in a bank.",
+      },
+      {
+        it: "Tu leggi il giornale ogni mattina?",
+        en: "Do you read the paper every morning?",
+      },
+      {it: "Noi dormiamo fino alle otto.", en: "We sleep until eight."},
+      {
+        it: "Paolo e Sara parlano inglese.",
+        en: "Paolo and Sara speak English.",
       },
     ],
     exercises: [
@@ -198,6 +224,10 @@ export const grammarLessons1to4: GrammarPoint[] = [
     examples: [
       {it: "Abito a Napoli, in Italia.", en: "I live in Naples, in Italy."},
       {it: "Abito in via Dante.", en: "I live in Via Dante."},
+      {
+        it: "Lavoro a Londra, ma abito in Inghilterra.",
+        en: "I work in London, but I live in England.",
+      },
     ],
     exercises: [
       gap("Abito ___ Milano.", ["a", "in", "di", "da"]),
@@ -222,6 +252,10 @@ export const grammarLessons1to4: GrammarPoint[] = [
       {
         it: "Questa è Anna, una mia collega.",
         en: "This is Anna, a colleague of mine.",
+      },
+      {
+        it: "Questo è il mio insegnante, Paolo.",
+        en: "This is my teacher, Paolo.",
       },
     ],
     exercises: [
@@ -263,6 +297,12 @@ export const grammarLessons1to4: GrammarPoint[] = [
         it: "Due cappuccini e due cornetti.",
         en: "Two cappuccinos and two croissants.",
       },
+      {it: "Un panino, due panini.", en: "One sandwich, two sandwiches."},
+      {it: "Una pizza, tre pizze.", en: "One pizza, three pizzas."},
+      {
+        it: "Un caffè, due caffè.",
+        en: "One coffee, two coffees (no change after an accent).",
+      },
     ],
     exercises: [
       gap("Due ___, per favore. (cornetto)", [
@@ -298,6 +338,7 @@ export const grammarLessons1to4: GrammarPoint[] = [
     examples: [
       {it: "Ti piace ballare?", en: "Do you like dancing?"},
       {it: "Non mi piacciono i film gialli.", en: "I don't like crime films."},
+      {it: "Mi piace molto la pizza.", en: "I really like pizza."},
     ],
     exercises: [
       gap("Mi ___ il cinema.", ["piace", "piacciono", "piaccio", "piacere"]),
@@ -330,6 +371,10 @@ export const grammarLessons1to4: GrammarPoint[] = [
         en: "– I like dancing. – Me too!",
       },
       {it: "A te piace il calcio?", en: "Do you like football?"},
+      {
+        it: "– Non mi piace il pesce. – Neanche a me.",
+        en: "– I don't like fish. – Me neither.",
+      },
     ],
     exercises: [
       gap("– Mi piace il cinema. – Anche ___ me!", ["a", "di", "per", "io"]),
@@ -368,6 +413,10 @@ export const grammarLessons1to4: GrammarPoint[] = [
         en: "On Saturdays I always play tennis.",
       },
       {it: "Non guardo mai la TV.", en: "I never watch TV."},
+      {
+        it: "Lavoro dal lunedì al venerdì.",
+        en: "I work from Monday to Friday.",
+      },
     ],
     exercises: [
       gap("___ sabato vado sempre in piscina. (every Saturday)", [
@@ -403,6 +452,12 @@ export const grammarLessons1to4: GrammarPoint[] = [
     ],
     examples: [
       {it: "Il film comincia alle nove.", en: "The film starts at nine."},
+      {
+        it: "– Che ore sono? – Sono le tre e mezza.",
+        en: "– What time is it? – It's half past three.",
+      },
+      {it: "È l'una e un quarto.", en: "It's a quarter past one."},
+      {it: "Pranzo a mezzogiorno.", en: "I have lunch at noon."},
     ],
     exercises: [
       gap("___ le tre e un quarto.", ["Sono", "È", "Ci sono", "Ha"]),

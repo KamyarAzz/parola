@@ -8,6 +8,8 @@ grammar and sentences of each lesson, and see exactly what to work on next.
 
 ## Features
 
+- **Lessons**: one page per lesson with its words, verbs and grammar (every
+  rule with at least three translated examples), then its tests
 - **Words**: 339 words from lessons 1–10, by lesson or topic, with audio
 - **Verbs**: 63 verbs (reflexive ones too) with all six present-tense forms, by lesson or type
 - **Grammar**: short summaries with tables, examples and fill-the-gap tests
